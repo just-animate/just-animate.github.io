@@ -19,7 +19,12 @@ markdown: kramdown
 
 kramdown:
   input: GFM
+  use_coderay: true
   enable_coderay: true
+  coderay:
+    coderay_line_numbers: true
+    coderay_css: class
+  
   syntax_highlighter: coderay
   syntax_highlighter_opts: 
     line_numbers: true
