@@ -15,4 +15,12 @@ twitter_username: notoriousb1t
 github_username:  notoriousb1t
 
 # Build settings
-markdown: redcarpet
+markdown: kramdown
+
+kramdown:
+  input: GFM
+  enable_coderay: true
+  syntax_highlighter: coderay
+  syntax_highlighter_opts: 
+    line_numbers: true
+    css: class
