@@ -15,4 +15,4 @@ twitter_username: notoriousb1t
 github_username:  notoriousb1t
 
 # Build settings
-markdown: kramdown
+markdown: redcarpet
