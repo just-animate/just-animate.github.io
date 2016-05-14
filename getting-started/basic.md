@@ -14,7 +14,7 @@ This getting started guide is for projects that want to include JavaScript anima
 
 ### 2. Include these scripts on your document
 
-```html
+``` html
 <script src="https://cdnjs.cloudflare.com/ajax/libs/web-animations/2.1.4/web-animations.min.js"></script>
 <script src="just-animate-core.js"></script>
 <script src="just-animate-animations.js"></script>
@@ -28,27 +28,27 @@ This getting started guide is for projects that want to include JavaScript anima
 
   **Using a dom selector**
   
-```javascript
+``` javascript
 Just.animate('fadeIn', '#animate-me')
 ```
  
   **Passing an element directly**
   
-```javascript
+``` javascript
 Just.animate('fadeIn', document.getElementById('animate-me'))
 ```
  
 
   **Passing a jQuery object**
   
-```javascript
+``` javascript
 Just.animate('fadeIn', $('#animate-me'))
 ```
   
   
   **Passing a function that returns any of the above**
   
-```javascript
+``` javascript
 Just.animate('fadeIn', function() {
   return document.getElementById('animate-me');
 });
@@ -56,13 +56,13 @@ Just.animate('fadeIn', function() {
   
   **Passing an array of any of the above**
  
-```javascript
+``` javascript
 Just.animate('fadeIn', [$('input:checkbox'), document.getElementById('#animate-me')]);
 ```
 
   **Passing in keyframes directly instead of a registered name**
 
-```javascript
+``` javascript
 var keyframes = [{ opacity: 0 }, { opacity: 1 }];
 Just.animate(keyframes, '#animate-me')
 ```
@@ -71,7 +71,7 @@ Just.animate(keyframes, '#animate-me')
  
  By default, Element Animators play automatically. If you need to fire it later, call .pause() on the Element Animator to stop it from executing
  
-```javascript
+``` javascript
 var elementAnimator = Just.animate('fadeIn', '#animate-me');
 elementAnimator.play();
 elementAnimator.pause();
