@@ -15,20 +15,20 @@ twitter_username: notoriousb1t
 github_username:  notoriousb1t
 
 # Build settings
-#markdown: redcarpet
-markdown: kramdown
+markdown: redcarpet
+#markdown: kramdown
 
-kramdown:
-  input: GFM
-  syntax_highlighter: coderay
-  syntax_highlighter_opts:
-    line_numbers: false
-    css: class
-    wrap: pre
-    tab_width: 4
-  use_coderay: true
-  coderay:
-    coderay_wrap: pre
-    coderay_line_numbers: nil
-    coderay_tab_width: 4
-    coderay_css: class
+# kramdown:
+#   input: GFM
+#   syntax_highlighter: coderay
+#   syntax_highlighter_opts:
+#     line_numbers: false
+#     css: class
+#     wrap: pre
+#     tab_width: 4
+#   use_coderay: true
+#   coderay:
+#     coderay_wrap: pre
+#     coderay_line_numbers: nil
+#     coderay_tab_width: 4
+#     coderay_css: class
