@@ -22,13 +22,13 @@ kramdown:
   input: GFM
   syntax_highlighter: coderay
   syntax_highlighter_opts:
-    line_numbers: true
+    line_numbers: false
     css: class
-
+    wrap: pre
+    tab_width: 4
   use_coderay: true
   coderay:
     coderay_wrap: pre
     coderay_line_numbers: nil
     coderay_tab_width: 4
-    coderay_bold_every: 10
     coderay_css: class
