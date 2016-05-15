@@ -12,6 +12,12 @@ This getting started guide is for projects that want to include JavaScript anima
 
 ### 1. Download the files for the browser version of Just Animate
 
+There are a few ways to get the files
+
+ - clone or [download](https://github.com/just-animate/just-animate/archive/master.zip) the project and copy the files from the dist/browser folder
+ - run the command ```npm install just-animate --save``` from your project root and copy the files from the browser directory to your www root
+ - (sorry, no CDN just yet!)
+
 ### 2. Include these scripts on your document
 
 ``` html
@@ -20,9 +26,9 @@ This getting started guide is for projects that want to include JavaScript anima
 <script src="just-animate-animations.js"></script>
 ```
   
-  - The first file is the web-animations polyfill. Just Animate uses the new Web Animations API in JavaScript.  For maximum browser compatibility, this should be included even if your browser supports this new standard. 
+  - The first file is the web-animations polyfill. Just Animate uses the new Web Animations API in JavaScript.  For best browser compatibility, include this even if your browser supports this new standard. 
   - The second file is the core library.  It should be included.
-  - The third file is optional.  It contains the builtin animations ported from Animation.css.  If you are going to provide all custom animations, simply omit it.
+  - The third file is optional.  It has the animations ported from Animation.css.  If you are going to use all custom animations, simply omit it.
 
 ### 3. Call the animation function any of these ways
 
