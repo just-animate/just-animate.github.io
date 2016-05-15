@@ -57,27 +57,27 @@ angular.module('myApp').controller('my-controller', MyController);
   **Using a dom selector**
   
 ``` javascript
-just.animate('fadeIn', '#animate-me')
+this.just.animate('fadeIn', '#animate-me')
 ```
  
   **Passing an element directly**
   
 ``` javascript
-just.animate('fadeIn', $event.target)
+this.just.animate('fadeIn', $event.target)
 ```
  
 
   **Passing a JQLite object**
   
 ``` javascript
-just.animate('fadeIn', angular.element('#animate-me'))
+this.just.animate('fadeIn', angular.element('#animate-me'))
 ```
   
   
   **Passing a function that returns any of the above**
   
 ``` javascript
-just.animate('fadeIn', function() {
+this.just.animate('fadeIn', function() {
   return document.getElementById('animate-me');
 });
 ```
@@ -85,14 +85,14 @@ just.animate('fadeIn', function() {
   **Passing an array of any of the above**
  
 ``` javascript
-just.animate('fadeIn', [angular.element('input:checkbox'), document.getElementById('#animate-me')]);
+this.just.animate('fadeIn', [angular.element('input:checkbox'), document.getElementById('#animate-me')]);
 ```
 
   **Passing in keyframes directly instead of a registered name**
 
 ``` javascript
 var keyframes = [{ opacity: 0 }, { opacity: 1 }];
-just.animate(keyframes, '#animate-me')
+this.just.animate(keyframes, '#animate-me')
 ```
  
 ### 6. Use the Element Animator returned to control the animation
@@ -100,7 +100,7 @@ just.animate(keyframes, '#animate-me')
  By default, Element Animators play automatically. If you need to fire it later, call .pause() on the Element Animator to stop it from executing
  
 ``` javascript
-var elementAnimator = just.animate('fadeIn', '#animate-me');
+var elementAnimator = this.just.animate('fadeIn', '#animate-me');
 elementAnimator.play();
 elementAnimator.pause();
 elementAnimator.finish();
