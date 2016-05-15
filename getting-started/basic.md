@@ -4,7 +4,7 @@ title: basic
 ---
 
 ## Getting Started - Basic
-
+ 
 This getting started guide is for projects that want to include JavaScript animations on top of an existing page directed site.  Similar to how jQuery can be accessed anywhere, Just Animate can be plugged in with a script and accessed anywhere from the global variable Just.  
 
 - If your project uses Angular 1.x, please read the [Getting Started - Angular 1.x](/getting-started/angular1) documentation
