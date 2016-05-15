@@ -5,7 +5,7 @@ title: Element Animator
 
 
 ## Class: ElementAnimator
-(description)
+Animates one or more elements
 
 ### ElementAnimator.ElementAnimator(manager, keyframesOrName, el, timings) 
 
@@ -13,13 +13,13 @@ Creates an instance of ElementAnimator.
 
 **Parameters**
 
-**manager**: `ja.IAnimationManager`, (description)
+**manager**: `ja.IAnimationManager`, JustAnimate instance
 
-**keyframesOrName**: `string | ja.IIndexed.&lt;ja.IKeyframe&gt;`, (description)
+**keyframesOrName**: `string | ja.IIndexed.&lt;ja.IKeyframe&gt;`, keyframe definition or name of registered animation
 
-**el**: `ja.ElementSource`, (description)
+**el**: `ja.ElementSource`, element or element source to animate
 
-**timings**: `ja.IAnimationEffectTiming`, (description)
+**timings**: `ja.IAnimationEffectTiming`, optional timing overrides.  required when passing in keyframes
 
 
 ### ElementAnimator.onfinish() 
@@ -29,83 +29,83 @@ Creates an instance of ElementAnimator.
 
 ### ElementAnimator.get() 
 
-(description)
+Returns 0 when not playing, 1 when playing forward, and -1 when playing backward
 
 
 ### ElementAnimator.set() 
 
-(description)
+Sets the playbackRate to the specified value
 
 
 ### ElementAnimator.get() 
 
-(description)
+Returns current time of the animation
 
 
 ### ElementAnimator.set() 
 
-(description)
+Sets the animation current time
 
 
 ### ElementAnimator.finish(fn) 
 
-(description)
+Finishes the current animation
 
 **Parameters**
 
-**fn**: `ja.ICallbackHandler`, (description)
+**fn**: `ja.ICallbackHandler`, optional error handler
 
-**Returns**: `ja.IAnimator`, (description)
+**Returns**: `ja.IAnimator`, this instance of the Element Animator
 
 ### ElementAnimator.play(fn) 
 
-(description)
+Plays the animation
 
 **Parameters**
 
-**fn**: `ja.ICallbackHandler`, (description)
+**fn**: `ja.ICallbackHandler`, optional error handler
 
-**Returns**: `ja.IAnimator`, (description)
+**Returns**: `ja.IAnimator`, this instance of Element Animator
 
 ### ElementAnimator.pause(fn) 
 
-(description)
+Pauses the animation
 
 **Parameters**
 
-**fn**: `ja.ICallbackHandler`, (description)
+**fn**: `ja.ICallbackHandler`, optional error handler
 
-**Returns**: `ja.IAnimator`, (description)
+**Returns**: `ja.IAnimator`, this instance of Element Animator
 
 ### ElementAnimator.reverse(fn) 
 
-(description)
+Reverses the direction of the animation
 
 **Parameters**
 
-**fn**: `ja.ICallbackHandler`, (description)
+**fn**: `ja.ICallbackHandler`, optional error handler
 
-**Returns**: `ja.IAnimator`, (description)
+**Returns**: `ja.IAnimator`, this instance of Element Animator
 
 ### ElementAnimator.cancel(fn) 
 
-(description)
+Cancels the animation
 
 **Parameters**
 
-**fn**: `ja.ICallbackHandler`, (description)
+**fn**: `ja.ICallbackHandler`, optional error handler
 
-**Returns**: `ja.IAnimator`, (description)
+**Returns**: `ja.IAnimator`, this instance of Element Animator
 
 ### ElementAnimator.getElements(source) 
 
-(description)
+Recursively resolves the element source from dom, selector, jquery, array, and function sources
 
 **Parameters**
 
-**source**: `ja.ElementSource`, (description)
+**source**: `ja.ElementSource`, from which to locate elements
 
-**Returns**: `Array.&lt;Element&gt;`, (description)
+**Returns**: `Array.&lt;Element&gt;`, array of elements found
 
 
 
