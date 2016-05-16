@@ -4,10 +4,10 @@ title: Element Animator
 ---
 
 
-## Class: ElementAnimator
+## ElementAnimator
 Animates one or more elements
 
-### ElementAnimator.ElementAnimator(manager, keyframesOrName, el, timings) 
+### constructor(manager, keyframesOrName, el, timings) 
 
 Creates an instance of ElementAnimator.
 
@@ -22,32 +22,23 @@ Creates an instance of ElementAnimator.
 **timings**: `ja.IAnimationEffectTiming`, optional timing overrides.  required when passing in keyframes
 
 
-### ElementAnimator.onfinish() 
+### onfinish() 
 
 (description)
 
 
-### ElementAnimator.get() 
+### playbackRate 
 
-Returns 0 when not playing, 1 when playing forward, and -1 when playing backward
-
-
-### ElementAnimator.set() 
-
-Sets the playbackRate to the specified value
+0 when not playing, 1 when playing forward, and -1 when playing backward
 
 
-### ElementAnimator.get() 
 
-Returns current time of the animation
+### currentTime
 
-
-### ElementAnimator.set() 
-
-Sets the animation current time
+current time of the animation
 
 
-### ElementAnimator.finish(fn) 
+### finish(fn) 
 
 Finishes the current animation
 
@@ -57,7 +48,7 @@ Finishes the current animation
 
 **Returns**: `ja.IAnimator`, this instance of the Element Animator
 
-### ElementAnimator.play(fn) 
+### play(fn) 
 
 Plays the animation
 
@@ -67,7 +58,7 @@ Plays the animation
 
 **Returns**: `ja.IAnimator`, this instance of Element Animator
 
-### ElementAnimator.pause(fn) 
+### pause(fn) 
 
 Pauses the animation
 
@@ -77,7 +68,7 @@ Pauses the animation
 
 **Returns**: `ja.IAnimator`, this instance of Element Animator
 
-### ElementAnimator.reverse(fn) 
+### reverse(fn) 
 
 Reverses the direction of the animation
 
@@ -87,7 +78,7 @@ Reverses the direction of the animation
 
 **Returns**: `ja.IAnimator`, this instance of Element Animator
 
-### ElementAnimator.cancel(fn) 
+### cancel(fn) 
 
 Cancels the animation
 
@@ -96,27 +87,3 @@ Cancels the animation
 **fn**: `ja.ICallbackHandler`, optional error handler
 
 **Returns**: `ja.IAnimator`, this instance of Element Animator
-
-### ElementAnimator.getElements(source) 
-
-Recursively resolves the element source from dom, selector, jquery, array, and function sources
-
-**Parameters**
-
-**source**: `ja.ElementSource`, from which to locate elements
-
-**Returns**: `Array.&lt;Element&gt;`, array of elements found
-
-
-
-* * *
-
-
-
-
-
-
-
-
-
-
