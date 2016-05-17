@@ -68,11 +68,11 @@ console.log(animator.currentTime);
 
 Completes the animation.  
 
+**Parameters**
+
 **fn**: [`ICallbackHandler`](#ICallbackHandler), optional error handler
 
 **Returns**: [`IAnimator`](#IAnimator), this instance of [IAnimator](#IAnimator)
-
-**Parameters**
 
 ### Usage 1
 ``` javascript
