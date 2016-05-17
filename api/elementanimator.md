@@ -14,7 +14,7 @@ This provides a common way to cancel, play, pause, etc.
 
 Called when the animation cancels.  Assignable to a function.
 
-### Usage
+#### Usage
 ``` javascript
 var animator = Just.animate('fadeIn', '#target');
 
@@ -28,7 +28,7 @@ animator.oncancel = function() {
 
 Called when the animation completes.  Assignable to a function.
 
-### Usage
+#### Usage
 ``` javascript
 var animator = Just.animate('fadeIn', '#target');
 
@@ -44,7 +44,7 @@ Rate at which the animation is playing.
 Value is 0 when not playing, 1 when playing forward, and -1 when playing backward.
 Decimals are not supported at this time.
 
-### Usage
+#### Usage
 ``` javascript
 var animator = Just.animate('fadeIn', '#target');
 
@@ -56,7 +56,7 @@ console.log(animator.playbackRate);
 
 Position of the animation in milliseconds.  
 
-### Usage
+#### Usage
 ``` javascript
 var animator = Just.animate('fadeIn', '#target');
 
@@ -74,14 +74,14 @@ Completes the animation.
 
 **Returns**: [`IAnimator`](#IAnimator), this instance of [IAnimator](#IAnimator)
 
-### Usage 1
+#### Usage 1
 ``` javascript
 var animator = Just.animate('fadeIn', '#target');
 
 animator.finish();
 ```
 
-### Usage 2
+#### Usage 2
 ``` javascript
 var animator = Just.animate('fadeIn', '#target');
 
@@ -103,14 +103,14 @@ Plays the animation
 
 **Returns**: [`IAnimator`](#IAnimator), this instance of [IAnimator](#IAnimator)
 
-### Usage 1
+#### Usage 1
 ``` javascript
 var animator = Just.animate('fadeIn', '#target');
 
 animator.play();
 ```
 
-### Usage 2
+#### Usage 2
 ``` javascript
 var animator = Just.animate('fadeIn', '#target');
 
@@ -132,14 +132,14 @@ Pauses the animation
 
 **Returns**: [`IAnimator`](#IAnimator), this instance of [IAnimator](#IAnimator)
 
-### Usage 1
+#### Usage 1
 ``` javascript
 var animator = Just.animate('fadeIn', '#target');
 
 animator.pause();
 ```
 
-### Usage 2
+#### Usage 2
 ``` javascript
 var animator = Just.animate('fadeIn', '#target');
 
@@ -161,14 +161,14 @@ Reverses the direction of the animation
 
 **Returns**: [`IAnimator`](#IAnimator), this instance of [IAnimator](#IAnimator)
 
-### Usage 1
+#### Usage 1
 ``` javascript
 var animator = Just.animate('fadeIn', '#target');
 
 animator.reverse();
 ```
 
-### Usage 2
+#### Usage 2
 ``` javascript
 var animator = Just.animate('fadeIn', '#target');
 
@@ -190,14 +190,14 @@ Cancels the animation
 
 **Returns**: [`IAnimator`](#IAnimator), this instance of [IAnimator](#IAnimator)
 
-### Usage 1
+#### Usage 1
 ``` javascript
 var animator = Just.animate('fadeIn', '#target');
 
 animator.cancel();
 ```
 
-### Usage 2
+#### Usage 2
 ``` javascript
 var animator = Just.animate('fadeIn', '#target');
 
@@ -219,7 +219,7 @@ Optional error handler
 
 **err**: `string|Error`, error message.
 
-### Usage
+#### Usage
 ``` javascript
 var errorHandler = function (err) { 
     if (err) {
