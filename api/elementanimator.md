@@ -10,46 +10,34 @@ Element, Sequence, and Timeline animators return the common interface, [IAnimato
 This provides a common way to cancel, play, pause, etc.
 
 -----
-### oncancel
+### cancel(fn) 
 
-Called when the animation cancels.  Assignable to a function.
+Cancels the animation
 
-#### Usage
+**Parameters**
+
+**fn**: [`ICallbackHandler`](#ICallbackHandler), optional error handler
+
+**Returns**: [`IAnimator`](#IAnimator), this instance of [IAnimator](#IAnimator)
+
+#### Usage 1
 ``` javascript
 var animator = Just.animate('fadeIn', '#target');
 
-animator.oncancel = function() {
-    // code to execute when animation cancels
-};
+animator.cancel();
 ```
 
------
-### onfinish
-
-Called when the animation completes.  Assignable to a function.
-
-#### Usage
+#### Usage 2
 ``` javascript
 var animator = Just.animate('fadeIn', '#target');
 
-animator.onfinish = function() {
-    // code to execute when animation finishes
-};
+animator.cancel(function(err) {
+    if (err) {
+        // handle error
+    }
+});
 ```
 
------
-### playbackRate 
-
-Rate at which the animation is playing.  
-Value is 0 when not playing, 1 when playing forward, and -1 when playing backward.
-Decimals are not supported at this time.
-
-#### Usage
-``` javascript
-var animator = Just.animate('fadeIn', '#target');
-
-console.log(animator.playbackRate);
-```
 
 -----
 ### currentTime
@@ -92,33 +80,33 @@ animator.finish(function(err) {
 });
 ```
 
+
 -----
-### play(fn) 
+### oncancel
 
-Plays the animation
+Called when the animation cancels.  Assignable to a function.
 
-**Parameters**
-
-**fn**: [`ICallbackHandler`](#ICallbackHandler), optional error handler
-
-**Returns**: [`IAnimator`](#IAnimator), this instance of [IAnimator](#IAnimator)
-
-#### Usage 1
+#### Usage
 ``` javascript
 var animator = Just.animate('fadeIn', '#target');
 
-animator.play();
+animator.oncancel = function() {
+    // code to execute when animation cancels
+};
 ```
 
-#### Usage 2
+-----
+### onfinish
+
+Called when the animation completes.  Assignable to a function.
+
+#### Usage
 ``` javascript
 var animator = Just.animate('fadeIn', '#target');
 
-animator.play(function(err) {
-    if (err) {
-        // handle error
-    }
-});
+animator.onfinish = function() {
+    // code to execute when animation finishes
+};
 ```
 
 -----
@@ -151,6 +139,50 @@ animator.pause(function(err) {
 ```
 
 -----
+### play(fn) 
+
+Plays the animation
+
+**Parameters**
+
+**fn**: [`ICallbackHandler`](#ICallbackHandler), optional error handler
+
+**Returns**: [`IAnimator`](#IAnimator), this instance of [IAnimator](#IAnimator)
+
+#### Usage 1
+``` javascript
+var animator = Just.animate('fadeIn', '#target');
+
+animator.play();
+```
+
+#### Usage 2
+``` javascript
+var animator = Just.animate('fadeIn', '#target');
+
+animator.play(function(err) {
+    if (err) {
+        // handle error
+    }
+});
+```
+
+-----
+### playbackRate 
+
+Rate at which the animation is playing.  
+Value is 0 when not playing, 1 when playing forward, and -1 when playing backward.
+Decimals are not supported at this time.
+
+#### Usage
+``` javascript
+var animator = Just.animate('fadeIn', '#target');
+
+console.log(animator.playbackRate);
+```
+
+
+-----
 ### reverse(fn) 
 
 Reverses the direction of the animation
@@ -173,35 +205,6 @@ animator.reverse();
 var animator = Just.animate('fadeIn', '#target');
 
 animator.reverse(function(err) {
-    if (err) {
-        // handle error
-    }
-});
-```
-
------
-### cancel(fn) 
-
-Cancels the animation
-
-**Parameters**
-
-**fn**: [`ICallbackHandler`](#ICallbackHandler), optional error handler
-
-**Returns**: [`IAnimator`](#IAnimator), this instance of [IAnimator](#IAnimator)
-
-#### Usage 1
-``` javascript
-var animator = Just.animate('fadeIn', '#target');
-
-animator.cancel();
-```
-
-#### Usage 2
-``` javascript
-var animator = Just.animate('fadeIn', '#target');
-
-animator.cancel(function(err) {
     if (err) {
         // handle error
     }
