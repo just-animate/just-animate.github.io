@@ -1,89 +1,232 @@
 ---
 layout: default
-title: Element Animator
+title: Just Animate - API Documentation
 ---
 
+<a name="IAnimator"></a>
 
-## ElementAnimator
-Animates one or more elements
+## IAnimator
+Element, Sequence, and Timeline animators return the common interface, [IAnimator](#IAnimator).
+This provides a common way to cancel, play, pause, etc.
 
-### constructor(manager, keyframesOrName, el, timings) 
+-----
+### oncancel
 
-Creates an instance of ElementAnimator.
+Called when the animation cancels.  Assignable to a function.
 
-**Parameters**
+### Usage
+``` javascript
+var animator = Just.animate('fadeIn', '#target');
 
-**manager**: `ja.IAnimationManager`, JustAnimate instance
+animator.oncancel = function() {
+    // code to execute when animation cancels
+};
+```
 
-**keyframesOrName**: `string | ja.IIndexed.&lt;ja.IKeyframe&gt;`, keyframe definition or name of registered animation
+-----
+### onfinish
 
-**el**: `ja.ElementSource`, element or element source to animate
+Called when the animation completes.  Assignable to a function.
 
-**timings**: `ja.IAnimationEffectTiming`, optional timing overrides.  required when passing in keyframes
+### Usage
+``` javascript
+var animator = Just.animate('fadeIn', '#target');
 
+animator.onfinish = function() {
+    // code to execute when animation finishes
+};
+```
 
-### onfinish() 
-
-(description)
-
-
+-----
 ### playbackRate 
 
-0 when not playing, 1 when playing forward, and -1 when playing backward
+Rate at which the animation is playing.  
+Value is 0 when not playing, 1 when playing forward, and -1 when playing backward.
+Decimals are not supported at this time.
 
+### Usage
+``` javascript
+var animator = Just.animate('fadeIn', '#target');
 
+console.log(animator.playbackRate);
+```
 
+-----
 ### currentTime
 
-current time of the animation
+Position of the animation in milliseconds.  
 
+### Usage
+``` javascript
+var animator = Just.animate('fadeIn', '#target');
 
+console.log(animator.currentTime);
+```
+
+-----
 ### finish(fn) 
 
-Finishes the current animation
+Completes the animation.  
+
+**fn**: [`ICallbackHandler`](#ICallbackHandler), optional error handler
+
+**Returns**: [`IAnimator`](#IAnimator), this instance of [IAnimator](#IAnimator)
 
 **Parameters**
 
-**fn**: `ja.ICallbackHandler`, optional error handler
+### Usage 1
+``` javascript
+var animator = Just.animate('fadeIn', '#target');
 
-**Returns**: `ja.IAnimator`, this instance of the Element Animator
+animator.finish();
+```
 
+### Usage 2
+``` javascript
+var animator = Just.animate('fadeIn', '#target');
+
+animator.finish(function(err) {
+    if (err) {
+        // handle error
+    }
+});
+```
+
+-----
 ### play(fn) 
 
 Plays the animation
 
 **Parameters**
 
-**fn**: `ja.ICallbackHandler`, optional error handler
+**fn**: [`ICallbackHandler`](#ICallbackHandler), optional error handler
 
-**Returns**: `ja.IAnimator`, this instance of Element Animator
+**Returns**: [`IAnimator`](#IAnimator), this instance of [IAnimator](#IAnimator)
 
+### Usage 1
+``` javascript
+var animator = Just.animate('fadeIn', '#target');
+
+animator.play();
+```
+
+### Usage 2
+``` javascript
+var animator = Just.animate('fadeIn', '#target');
+
+animator.play(function(err) {
+    if (err) {
+        // handle error
+    }
+});
+```
+
+-----
 ### pause(fn) 
 
 Pauses the animation
 
 **Parameters**
 
-**fn**: `ja.ICallbackHandler`, optional error handler
+**fn**: [`ICallbackHandler`](#ICallbackHandler), optional error handler
 
-**Returns**: `ja.IAnimator`, this instance of Element Animator
+**Returns**: [`IAnimator`](#IAnimator), this instance of [IAnimator](#IAnimator)
 
+### Usage 1
+``` javascript
+var animator = Just.animate('fadeIn', '#target');
+
+animator.pause();
+```
+
+### Usage 2
+``` javascript
+var animator = Just.animate('fadeIn', '#target');
+
+animator.pause(function(err) {
+    if (err) {
+        // handle error
+    }
+});
+```
+
+-----
 ### reverse(fn) 
 
 Reverses the direction of the animation
 
 **Parameters**
 
-**fn**: `ja.ICallbackHandler`, optional error handler
+**fn**: [`ICallbackHandler`](#ICallbackHandler), optional error handler
 
-**Returns**: `ja.IAnimator`, this instance of Element Animator
+**Returns**: [`IAnimator`](#IAnimator), this instance of [IAnimator](#IAnimator)
 
+### Usage 1
+``` javascript
+var animator = Just.animate('fadeIn', '#target');
+
+animator.reverse();
+```
+
+### Usage 2
+``` javascript
+var animator = Just.animate('fadeIn', '#target');
+
+animator.reverse(function(err) {
+    if (err) {
+        // handle error
+    }
+});
+```
+
+-----
 ### cancel(fn) 
 
 Cancels the animation
 
 **Parameters**
 
-**fn**: `ja.ICallbackHandler`, optional error handler
+**fn**: [`ICallbackHandler`](#ICallbackHandler), optional error handler
 
-**Returns**: `ja.IAnimator`, this instance of Element Animator
+**Returns**: [`IAnimator`](#IAnimator), this instance of [IAnimator](#IAnimator)
+
+### Usage 1
+``` javascript
+var animator = Just.animate('fadeIn', '#target');
+
+animator.cancel();
+```
+
+### Usage 2
+``` javascript
+var animator = Just.animate('fadeIn', '#target');
+
+animator.cancel(function(err) {
+    if (err) {
+        // handle error
+    }
+});
+```
+
+-----
+<a name="ICallbackHandler"></a>
+
+## ICallbackHandler
+
+Optional error handler
+
+**Parameters**
+
+**err**: `string|Error`, error message.
+
+### Usage
+``` javascript
+var errorHandler = function (err) { 
+    if (err) {
+        // error handler logic here
+        return;
+    }
+};
+```
+
+-----
