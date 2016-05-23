@@ -703,13 +703,73 @@ A single keyframe in an animation.  Except for offset, all properties are taken 
 ### perspective-origin
 ####Type: string
 -----
+### rotate
+Controls the rotation of element.  Shorthand for transform: 'rotate()'
+####Type: string | string[2]
+-----
+### rotate3d
+Controls the rotation of element.  Shorthand for transform: 'rotate3d()'
+####Type: string | string[3]
+-----
+### rotateX
+Controls the rotation of element on the X axis.  Shorthand for transform: 'rotateX()'
+####Type: string
+-----
+### rotateY
+Controls the rotation of element on the Y axis.  Shorthand for transform: 'rotateY()'
+####Type: string
+-----
+### rotateZ
+Controls the rotation of element on the Z axis.  Shorthand for transform: 'rotateZ()'
+####Type: string
+-----
 ### right
 ####Type: string
+-----
+### scale
+Controls the scale of element.  Shorthand for transform: 'scale()'
+####Type: number | number[2]
+-----
+### scale3d
+Controls the scale of element.  Shorthand for transform: 'scale3d()'
+####Type: number | number[3]
+-----
+### scaleX
+Controls the scale of element on the X axis.  Shorthand for transform: 'scaleX()'
+####Type: number
+-----
+### scaleY
+Controls the scale of element on the Y axis.  Shorthand for transform: 'scaleY()'
+####Type: number
+-----
+### scaleZ
+Controls the scale of element on the Z axis.  Shorthand for transform: 'scaleZ()'
+####Type: number
 -----
 ### scroll-snap-coordinate
 ####Type: string
 -----
 ### scroll-snap-destination
+####Type: string
+-----
+### skew
+Skews (warps) an element.  Shorthand for transform: 'skew()'
+####Type: string | string[2]
+-----
+### skew3d
+Skews (warps) an element.  Shorthand for transform: 'skew3d()'
+####Type: string | string[3]
+-----
+### skewX
+Skews (warps) an element on the X axis.  Shorthand for transform: 'skewX()'
+####Type: string
+-----
+### skewY
+Skews (warps) an element on the Y axis.  Shorthand for transform: 'skewY()'
+####Type: string
+-----
+### skewZ
+Skews (warps) an element on the Z axis.  Shorthand for transform: 'skewZ()'
 ####Type: string
 -----
 ### shape-image-threshold
@@ -746,6 +806,26 @@ A single keyframe in an animation.  Except for offset, all properties are taken 
 ####Type: string
 -----
 ### transform-origin
+####Type: string
+-----
+### translate
+Translates (moves) an element.  Shorthand for transform: 'translate()'
+####Type: string | string[2]
+-----
+### translate3d
+Translates (moves) an element.  Shorthand for transform: 'translate3d()'
+####Type: string | string[3]
+-----
+### translateX
+Translates (moves) an element on the X axis.  Shorthand for transform: 'translateX()'
+####Type: string
+-----
+### translateY
+Translates (moves) an element on the Y axis.  Shorthand for transform: 'translateY()'
+####Type: string
+-----
+### translateZ
+Translates (moves) an element on the Z axis.  Shorthand for transform: 'translateZ()'
 ####Type: string
 -----
 ### vertical-align
