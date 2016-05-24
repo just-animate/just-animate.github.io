@@ -704,24 +704,63 @@ A single keyframe in an animation.  Except for offset, all properties are taken 
 ####Type: string
 -----
 ### rotate
-Controls the rotation of element.  Shorthand for transform: 'rotate()'
-####Type: string | string[2]
+Controls the rotation of element.  Alias for the rotateZ property
+####Type: string
+####Usage
+```javascript
+var angle = '90deg';
+
+var keyframe1 = {
+    rotate: angle
+};
+```
 -----
 ### rotate3d
-Controls the rotation of element.  Shorthand for transform: 'rotate3d()'
-####Type: string | string[3]
+Controls the rotation of element.  Shorthand for transform: 'rotate3d(?)'
+####Type: (string|number)[]
+####Usage
+```javascript
+var x = 0, y = 0, z = 1;
+var angle = '90deg';
+
+var keyframe1 = {
+    rotate3d: [x, y, z, angle]
+};
+```
 -----
 ### rotateX
-Controls the rotation of element on the X axis.  Shorthand for transform: 'rotateX()'
+Controls the rotation of element on the X axis.  Shorthand for transform: 'rotate3d(1, 0, 0, ?)'
 ####Type: string
+####Usage
+```javascript
+var angle = '90deg';
+
+var keyframe1 = {
+    rotateX: angle
+};
+```
 -----
 ### rotateY
-Controls the rotation of element on the Y axis.  Shorthand for transform: 'rotateY()'
+Controls the rotation of element on the Y axis.  Shorthand for transform: 'rotate3d(0, 1, 0, ?)'
 ####Type: string
+```javascript
+var angle = '90deg';
+
+var keyframe1 = {
+    rotateY: angle
+};
+```
 -----
 ### rotateZ
-Controls the rotation of element on the Z axis.  Shorthand for transform: 'rotateZ()'
+Controls the rotation of element on the Z axis.  Shorthand for transform: 'rotate3d(0, 0, 1, ?)'
 ####Type: string
+```javascript
+var angle = '90deg';
+
+var keyframe1 = {
+    rotateZ: angle
+};
+```
 -----
 ### right
 ####Type: string
@@ -809,24 +848,56 @@ Skews (warps) an element on the Z axis.  Shorthand for transform: 'skewZ()'
 ####Type: string
 -----
 ### translate
-Translates (moves) an element.  Shorthand for transform: 'translate()'
+Translates (moves) an element.  Shorthand for transform: 'translate(?, ?)'.  Passing a string will use the same
+value on both the x and y axes
 ####Type: string | string[2]
+####Usage
+```javascript
+{
+    translate: ['0', '20px']
+}
+```
 -----
 ### translate3d
-Translates (moves) an element.  Shorthand for transform: 'translate3d()'
+Translates (moves) an element.  Shorthand for transform: 'translate3d(?, ?, ?)'. Passing a string will use the same
+value on the x, y, and z axes.
 ####Type: string | string[3]
+####Usage
+```javascript
+{
+    translate: ['20px', '0', '0']
+}
+```
 -----
 ### translateX
 Translates (moves) an element on the X axis.  Shorthand for transform: 'translateX()'
 ####Type: string
+####Usage
+```javascript
+{
+    translateX: '20px'
+}
+```
 -----
 ### translateY
 Translates (moves) an element on the Y axis.  Shorthand for transform: 'translateY()'
 ####Type: string
+####Usage
+```javascript
+{
+    translateY: '20px'
+}
+```
 -----
 ### translateZ
 Translates (moves) an element on the Z axis.  Shorthand for transform: 'translateZ()'
 ####Type: string
+####Usage
+```javascript
+{
+    translateZ: '20px'
+}
+```
 -----
 ### vertical-align
 ####Type: string
