@@ -766,24 +766,58 @@ var keyframe1 = {
 ####Type: string
 -----
 ### scale
-Controls the scale of element.  Shorthand for transform: 'scale()'
+Controls the scale of element.  Shorthand for transform: 'scale(?, ?)'
 ####Type: number | number[2]
 -----
+####Usage
+```javascript
+var x = 2, y = 1;
+
+var keyframe1 = {
+    scale: [x, y]
+};
+```
 ### scale3d
-Controls the scale of element.  Shorthand for transform: 'scale3d()'
+Controls the scale of element.  Shorthand for transform: 'scale3d(?, ?, ?)'. The same value is used for x, y, and z when a string is passed in.
 ####Type: number | number[3]
 -----
+####Usage
+```javascript
+var x = 2, y = 1, z = 1;
+
+var keyframe1 = {
+    scale3d: [x, y, z]
+};
+```
 ### scaleX
-Controls the scale of element on the X axis.  Shorthand for transform: 'scaleX()'
+Controls the scale of element on the X axis.  Shorthand for transform: 'scaleX(?)'
 ####Type: number
+####Usage
+```javascript
+{
+    scaleX: 1.2
+}
+```
 -----
 ### scaleY
-Controls the scale of element on the Y axis.  Shorthand for transform: 'scaleY()'
+Controls the scale of element on the Y axis.  Shorthand for transform: 'scaleY(?)'
 ####Type: number
+####Usage
+```javascript
+{
+    scaleY: 1.2
+}
+```
 -----
 ### scaleZ
-Controls the scale of element on the Z axis.  Shorthand for transform: 'scaleZ()'
+Controls the scale of element on the Z axis.  Shorthand for transform: 'scaleZ(?)'
 ####Type: number
+####Usage
+```javascript
+{
+    scaleZ: 1.2
+}
+```
 -----
 ### scroll-snap-coordinate
 ####Type: string
