@@ -716,7 +716,7 @@ var keyframe1 = {
 ```
 -----
 ### rotate3d
-Controls the rotation of element.  Shorthand for transform: 'rotate3d(?)'
+Controls the rotation of element.  Shorthand for transform: 'rotate3d(?, ?, ?, ?)'
 ####Type: (string|number)[]
 ####Usage
 ```javascript
@@ -792,24 +792,36 @@ Controls the scale of element on the Z axis.  Shorthand for transform: 'scaleZ()
 ####Type: string
 -----
 ### skew
-Skews (warps) an element.  Shorthand for transform: 'skew()'
+Skews (warps) an element.  Shorthand for transform: 'skew(?, ?)'
 ####Type: string | string[2]
------
-### skew3d
-Skews (warps) an element.  Shorthand for transform: 'skew3d()'
-####Type: string | string[3]
+####Usage
+```javascript
+var x = '20deg', y = '0';
+
+var keyframe1 = {
+    skew: [x, y]
+};
+```
 -----
 ### skewX
-Skews (warps) an element on the X axis.  Shorthand for transform: 'skewX()'
+Skews (warps) an element on the X axis.  Shorthand for transform: 'skewX(?)'
 ####Type: string
+####Usage
+```javascript
+{
+    skewX: '20deg'
+}
+```
 -----
 ### skewY
-Skews (warps) an element on the Y axis.  Shorthand for transform: 'skewY()'
+Skews (warps) an element on the Y axis.  Shorthand for transform: 'skewY(?)'
 ####Type: string
------
-### skewZ
-Skews (warps) an element on the Z axis.  Shorthand for transform: 'skewZ()'
-####Type: string
+####Usage
+```javascript
+{
+    skewY: '20deg'
+}
+```
 -----
 ### shape-image-threshold
 ####Type: string
@@ -865,7 +877,7 @@ value on the x, y, and z axes.
 ####Usage
 ```javascript
 {
-    translate: ['20px', '0', '0']
+    translate3d: ['20px', '0', '0']
 }
 ```
 -----
