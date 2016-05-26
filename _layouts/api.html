@@ -1,0 +1,39 @@
+--- 
+layout: default 
+---
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-3 no-left-gutter">
+      <nav id="navbar">
+        <nav class="hidden-print hidden-xs hidden-sm affix">
+          <ul class="nav">
+            <li> <a href="#">IAnimationEffectTiming</a></li>
+            <li> <a href="#IAnimator">IAnimator</a></li>
+            <li> <a href="#ICallbackHandler">ICallbackHandler</a></li>
+            <li> <a href="#IKeyframe">IKeyframe</a></li>
+          </ul>
+        </nav>
+      </nav>
+    </div>
+    <div class="col-md-9">
+      {{ content }}
+    </div>
+  </div>
+</div>
+
+<script>
+  $('body').scrollspy({ target: '#navbar' });
+  
+  $('#navbar').affix({
+    offset: {
+      top: 0
+    }
+  })
+
+</script>
+
+<style>
+  #navbar {
+    top: 100;
+  }
+</style>

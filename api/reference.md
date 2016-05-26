@@ -1,8 +1,9 @@
 ---
-layout: default
+layout: api
 title: Just Animate - API Documentation
 ---
-<a name="IAnimationEffectTiming"></a>
+<a name="top"></a>
+<a name="IAnimationEffectTiming" ></a>
 
 ## IAnimationEffectTiming
 Timing options for an animation.  These options are based on the timing options in the Web Animations API and control the rate of playback, the length, and the shape of the animation.
@@ -188,7 +189,7 @@ Number of times the animation should play.  By default this is set to 1.  To pla
 
 -----
 
-<a name="IAnimator"></a>
+<a name="IAnimator" class="nav-link"></a>
 
 ## IAnimator
 Element, Sequence, and Timeline animators return the common interface, [IAnimator](#IAnimator).
@@ -399,7 +400,7 @@ animator.reverse(function(err) {
 ```
 
 -----
-<a name="ICallbackHandler"></a>
+<a name="ICallbackHandler" class="nav-link"></a>
 
 ## ICallbackHandler
 
@@ -420,11 +421,11 @@ var errorHandler = function (err) {
 ```
 
 -----
-<a name="IKeyframe"></a>
+<a name="IKeyframe"  class="nav-link"></a>
 
 ## IKeyframe
 
-A single keyframe in an animation.  Except for offset, all properties are taken from the list of animateable css properties.  
+A single keyframe in an animation.  All properties are CSS3 properties except offset, rotate, scale, translate, and skew.
 
 -----
 ### offset

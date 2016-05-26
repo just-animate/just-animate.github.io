@@ -2,3 +2,18 @@
     display: inline-block;
     width: 16px;
 }
+
+.top-element {
+    padding-top: 5em;
+}
+
+// styles to make the title apppear right under the fixed navbar
+.nav-link {
+    padding-top: 3em;
+    display: inline-block;
+}
+
+.no-left-gutter {
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+}
