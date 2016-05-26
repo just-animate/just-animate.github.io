@@ -1,15 +1,15 @@
 ---
 layout: default
-title: Getting Started - Angular 2.x
+title: Getting Started - Angular 2.0
 ---
 
-## Getting Started - Angular 2.x
+## Getting Started with Angular 2.0
  
 This getting started guide is for projects that want to include JavaScript animations inside an Angular 2.x application, a SystemJS application, or an application
 bundled with WebPack, Browserify, or RollupJS.
 
-- If your project needs basic integration, please read the [Getting Started - Basic](/getting-started/basic) documentation
-- If your project uses Angular 1.x, please read the [Getting Started - Angular 1.x](/getting-started/angular1) documentation
+- If your project needs basic integration, please read the [Getting Started - Basic](/how-to/get-started) documentation
+- If your project uses Angular 1.x, please read the [Getting Started - Angular 1.x](/how-to/get-started-with-angular1) documentation
 
 ### 1. Download the files for the universal version of Just Animate
 
