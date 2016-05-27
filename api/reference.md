@@ -9,7 +9,6 @@ The API Reference provides detailed information on how each part of Just Animate
 
 If you see an error in the documentation or need an answer not provided here, please raise an issue on the [Just Animate GitHub Issues Page](https://github.com/just-animate/just-animate/issues)
 
------
 <a name="CSSAnimatedProperties" class="nav-link"></a>
 ## CSS Animated Properties
 
@@ -129,7 +128,6 @@ The following CSS properties can be animated. Click on each property to learn mo
 - [word-spacing](https://developer.mozilla.org/en-US/docs/Web/CSS/word-spacing)
 - [z-index](https://developer.mozilla.org/en-US/docs/Web/CSS/z-index)
 
------
 <a name="CSSTransformProperties" class="nav-link"></a>
 ## CSS Transform Shorthand Properties
 
@@ -333,7 +331,7 @@ Translates (moves) an element on the Z axis.  Shorthand for transform: 'translat
     translateZ: '20px'
 }
 ```
------
+
 <a name="Easings" class="nav-link"></a>
 ## Easings
 
@@ -466,7 +464,6 @@ cubic-bezier(0.680, -0.550, 0.265, 1.550)
 
 cubic-bezier(0.175, 0.885, 0.320, 1.275)
 
------
 
 <a name="IAnimationEffectTiming"  class="nav-link"></a>
 
@@ -732,7 +729,6 @@ animator.reverse(function(err) {
 });
 ```
 
------
 <a name="ICallbackHandler" class="nav-link"></a>
 
 ## ICallbackHandler
@@ -753,7 +749,6 @@ var errorHandler = function (err) {
 };
 ```
 
------
 <a name="IKeyframe"  class="nav-link"></a>
 
 ## IKeyframe
