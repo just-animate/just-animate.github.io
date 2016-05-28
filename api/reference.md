@@ -4,15 +4,22 @@ title: Just Animate - API Documentation
 ---
 
 <a name="top"></a>
+
 ## About this document
+
 The API Reference provides detailed information on how each part of Just Animate works.  Before diving into this document, take a look at the How-Tos to see more general (and friendly) explanations on how to use Just Animate. 
 
 If you see an error in the documentation or need an answer not provided here, please raise an issue on the [Just Animate GitHub Issues Page](https://github.com/just-animate/just-animate/issues)
 
+
+
 <a name="CSSAnimatedProperties" class="nav-link"></a>
+
 ## CSS Animated Properties
 
-The following CSS properties can be animated. Click on each property to learn more on [Mozilla Developer Network](https://developer.mozilla.org/en-US/).  In addition to these properties, there are also [CSS Transform Shorthand Properties](#CSSTransformProperties) that translate to the transform property.
+The following CSS properties can be animated. Properties with '-' in them are converted to camelcase.  For example, border-bottom-left is converted to borderBottomLeft.  Click on each property to learn more on [Mozilla Developer Network](https://developer.mozilla.org/en-US/).  
+
+There are also Just Animate [CSS Transform Shorthand Properties](#CSSTransformProperties) that can be used in place of the transform property.
 
 <!--
 - [-moz-outline-radius](https://developer.mozilla.org/en-US/docs/Web/CSS/-moz-outline-radius)
@@ -162,8 +169,8 @@ var keyframe1 = {
 -----
 ### rotateX
 Controls the rotation of element on the X axis.  Shorthand for transform: 'rotate3d(1, 0, 0, ?)'
-####Type: string
-####Usage
+#### Type: string
+#### Usage
 ```javascript
 var angle = '90deg';
 
@@ -465,6 +472,12 @@ cubic-bezier(0.680, -0.550, 0.265, 1.550)
 cubic-bezier(0.175, 0.885, 0.320, 1.275)
 
 
+<a name="ElementSource"  class="nav-link"></a>
+
+## ElementSource
+
+(construction zone... awaiting the proper permits...)
+
 <a name="IAnimationEffectTiming"  class="nav-link"></a>
 
 ## IAnimationEffectTiming
@@ -517,7 +530,11 @@ Number of times the animation should play.  By default this is set to 1.  To pla
 #### Type: number (optional)
 
 
------
+<a name="IAnimationOptions"  class="nav-link"></a>
+
+## IAnimationOptions
+
+(construction zone... awaiting the proper permits...)
 
 <a name="IAnimator" class="nav-link"></a>
 
@@ -763,5 +780,181 @@ Offset is a number between 0 and 1 that tells Just Animate when to play the keyf
 Offset is optional when no other keyframe has specified an offset.  Just Animate assumes that all keyframes are the same distance apart when no offset is provided.
 
 #### Type: number (optional)
------
 
+
+<a name="ISequenceEvent"  class="nav-link"></a>
+
+## ISequenceEvent
+
+(construction zone... awaiting the proper permits...)
+
+<a name="ISequenceOptions"  class="nav-link"></a>
+
+## ISequenceOptions
+
+(construction zone... awaiting the proper permits...)
+
+<a name="ITimelineEvent"  class="nav-link"></a>
+
+## ITimelineEvent
+
+(construction zone... awaiting the proper permits...)
+
+<a name="ITimelineOptions"  class="nav-link"></a>
+
+## ITimelineOptions
+
+(construction zone... awaiting the proper permits...)
+
+<a name="JustAnimate" class="nav-link"></a>
+
+## JustAnimate
+
+Creates all animations and keeps a list of animations by name.  With the just-animate-core file, a global variable named ```Just``` is added to the environment.
+If angular 1.x is detected in the environment, JustAnimate will register itself to the 'just.animate' module as a service named 'just'.  Using SystemJS or CommonJS,
+an instance must be explicity created while bootstrapping the application.  Please see the Getting Started Guides for more information.
+
+
+
+-----
+### inject(animations)
+
+Injects a list of animations into all instances of JustAnimate.
+
+
+**Parameters**
+
+**animations**: [`IAnimationOptions`](#IAnimationOptions)[], list of animations to be injected
+
+
+#### Type: static Function
+#### Browser Only Usage
+``` javascript
+Just.inject([
+    { 
+        name: 'fadeIn',
+        keyframes: [
+            { opacity: 0 },
+            { opacity: 1 }
+        ],
+        timings: {
+            duration: 900,
+            fill: 'both',
+            easing: 'ease-out'
+        }
+    },
+    { 
+        name: 'fadeOut',
+        keyframes: [
+            { opacity: 1 },
+            { opacity: 0 }
+        ],
+        timings: {
+            duration: 900,
+            fill: 'both',
+            easing: 'ease-in'
+        }
+    }
+]);
+```
+#### CommonJS/SystemJS Usage
+``` javascript
+import { JustAnimate } from 'just-animate';
+
+JustAnimate.inject([
+    {
+        name: 'fadeIn',
+        keyframes: [
+            { opacity: 0 },
+            { opacity: 1 }
+        ],
+        timings: {
+            duration: 900,
+            fill: 'both',
+            easing: 'ease-out'
+        }
+    },
+    {
+        name: 'fadeOut',
+        keyframes: [
+            { opacity: 1 },
+            { opacity: 0 }
+        ],
+        timings: {
+            duration: 900,
+            fill: 'both',
+            easing: 'ease-in'
+        }
+    }
+]);
+```
+
+/**
+     * (description)
+     * 
+     * @static
+     * @param {ja.IAnimationOptions[]} animations (description)
+     */
+    public static inject(animations: ja.IAnimationOptions[]): void {
+        
+        Array.prototype.push.apply(DEFAULT_ANIMATIONS, map(animations, animationTransformer));
+    }
+
+    /**
+     * Creates an instance of JustAnimate.
+     */
+    constructor() {
+        this._registry = {};
+        each(DEFAULT_ANIMATIONS, (a: ja.IAnimationOptions) => this._registry[a.name] = a);
+    }
+
+    /**
+     * (description)
+     * 
+     * @param {(string | ja.IIndexed<ja.IKeyframe>)} keyframesOrName (description)
+     * @param {ja.ElementSource} el (description)
+     * @param {ja.IAnimationEffectTiming} [timings] (description)
+     * @returns {ja.IAnimator} (description)
+     */
+    public animate(keyframesOrName: string | ja.IIndexed<ja.IKeyframe>, 
+                   el: ja.ElementSource, 
+                   timings?: ja.IAnimationEffectTiming): ja.IAnimator {
+        return new ElementAnimator(this, keyframesOrName, el, timings);
+    }
+    /**
+     * (description)
+     * 
+     * @param {ja.ISequenceOptions} options (description)
+     * @returns {ja.IAnimator} (description)
+     */
+    public animateSequence(options: ja.ISequenceOptions): ja.IAnimator {
+        return new SequenceAnimator(this, options);
+    }
+    /**
+     * (description)
+     * 
+     * @param {ja.ITimelineOptions} options (description)
+     * @returns {ja.IAnimator} (description)
+     */
+    public animateTimeline(options: ja.ITimelineOptions): ja.IAnimator {
+        return new TimelineAnimator(this, options);
+    }
+    /**
+     * (description)
+     * 
+     * @param {string} name (description)
+     * @returns {ja.IKeyframeOptions} (description)
+     */
+    public findAnimation(name: string): ja.IKeyframeOptions {
+        return this._registry[name] || undefined;
+    }
+    /**
+     * (description)
+     * 
+     * @param {ja.IAnimationOptions} animationOptions (description)
+     * @returns {ja.IAnimationManager} (description)
+     */
+    public register(animationOptions: ja.IAnimationOptions): ja.IAnimationManager {        
+        this._registry[animationOptions.name] = animationTransformer(animationOptions);
+        return this;
+    }
