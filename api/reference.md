@@ -5,12 +5,115 @@ title: Just Animate - API Documentation
 
 <a name="top"></a>
 
-## About this document
+## Using this document
 
 The API Reference provides detailed information on how each part of Just Animate works.  Before diving into this document, take a look at the How-Tos to see more general (and friendly) explanations on how to use Just Animate. 
 
 If you see an error in the documentation or need an answer not provided here, please raise an issue on the [Just Animate GitHub Issues Page](https://github.com/just-animate/just-animate/issues)
 
+
+<a name="JustAnimate" class="nav-link"></a>
+
+## JustAnimate
+
+Creates all animations and keeps a list of animations by name.  With the just-animate-core file, a global variable named ```Just``` is added to the environment.
+If angular 1.x is detected in the environment, JustAnimate will register itself to the 'just.animate' module as a service named 'just'.  Using SystemJS or CommonJS,
+an instance must be explicitly created while bootstrapping the application.  Please see the Getting Started Guides for more information.
+
+
+-----
+### animate(keyframes|name, el, timings?)
+
+(construction zone... awaiting the proper permits...)
+
+
+-----
+### animateSequence(options)
+
+(construction zone... awaiting the proper permits...)
+
+-----
+### animateTimeline(options)
+
+(construction zone... awaiting the proper permits...)
+
+-----
+### inject(animations)
+
+Injects a list of animations into JustAnimate.  Only instances created after injection will have these animations.
+
+
+**Parameters**
+
+**animations**: [`IAnimationOptions`](#IAnimationOptions)[], list of animations to be injected
+
+
+#### Type: static Function
+#### Browser Only Usage
+``` javascript
+Just.inject([
+    { 
+        name: 'fadeIn',
+        keyframes: [
+            { opacity: 0 },
+            { opacity: 1 }
+        ],
+        timings: {
+            duration: 900,
+            fill: 'both',
+            easing: 'ease-out'
+        }
+    },
+    { 
+        name: 'fadeOut',
+        keyframes: [
+            { opacity: 1 },
+            { opacity: 0 }
+        ],
+        timings: {
+            duration: 900,
+            fill: 'both',
+            easing: 'ease-in'
+        }
+    }
+]);
+```
+#### CommonJS/SystemJS Usage
+``` javascript
+import { JustAnimate } from 'just-animate';
+
+JustAnimate.inject([
+    {
+        name: 'fadeIn',
+        keyframes: [
+            { opacity: 0 },
+            { opacity: 1 }
+        ],
+        timings: {
+            duration: 900,
+            fill: 'both',
+            easing: 'ease-out'
+        }
+    },
+    {
+        name: 'fadeOut',
+        keyframes: [
+            { opacity: 1 },
+            { opacity: 0 }
+        ],
+        timings: {
+            duration: 900,
+            fill: 'both',
+            easing: 'ease-in'
+        }
+    }
+]);
+```
+
+-----
+### register(options)
+
+(construction zone... awaiting the proper permits...)
 
 
 <a name="CSSAnimatedProperties" class="nav-link"></a>
@@ -476,7 +579,57 @@ cubic-bezier(0.175, 0.885, 0.320, 1.275)
 
 ## ElementSource
 
-(construction zone... awaiting the proper permits...)
+An element source is any supported means of finding an HTML Element. Here are some of the ways that Just Animate
+can locate an Element:
+
+ **Using a dom selector**
+  
+``` javascript
+var element = '#element';
+Just.animate('fadeIn', element);
+```
+ 
+  **Using an element directly**
+  
+``` javascript
+var element = document.getElementById('element')
+Just.animate('fadeIn', element);
+```
+ 
+  **Using a jQuery object**
+  
+``` javascript
+var $element = $('#element')
+Just.animate('fadeIn', $element);
+```
+  
+   
+  **Using an Angular 1.x element**
+  
+``` javascript
+var $element = angular.element('#element')
+Just.animate('fadeIn', $element);
+```
+  
+  **Using a function that returns an ElementSource**
+  
+``` javascript
+function elementProvider() {
+    return document.getElementById('element');
+}
+
+Just.animate('fadeIn', elementProvider);
+```
+  
+  **Using an array of that contains ElementSources**
+ 
+``` javascript
+var element = [
+    $('input:checkbox'), 
+    document.getElementById('element')
+];
+Just.animate('fadeIn', element);
+```
 
 <a name="IAnimationEffectTiming"  class="nav-link"></a>
 
@@ -805,156 +958,3 @@ Offset is optional when no other keyframe has specified an offset.  Just Animate
 ## ITimelineOptions
 
 (construction zone... awaiting the proper permits...)
-
-<a name="JustAnimate" class="nav-link"></a>
-
-## JustAnimate
-
-Creates all animations and keeps a list of animations by name.  With the just-animate-core file, a global variable named ```Just``` is added to the environment.
-If angular 1.x is detected in the environment, JustAnimate will register itself to the 'just.animate' module as a service named 'just'.  Using SystemJS or CommonJS,
-an instance must be explicity created while bootstrapping the application.  Please see the Getting Started Guides for more information.
-
-
-
------
-### inject(animations)
-
-Injects a list of animations into all instances of JustAnimate.
-
-
-**Parameters**
-
-**animations**: [`IAnimationOptions`](#IAnimationOptions)[], list of animations to be injected
-
-
-#### Type: static Function
-#### Browser Only Usage
-``` javascript
-Just.inject([
-    { 
-        name: 'fadeIn',
-        keyframes: [
-            { opacity: 0 },
-            { opacity: 1 }
-        ],
-        timings: {
-            duration: 900,
-            fill: 'both',
-            easing: 'ease-out'
-        }
-    },
-    { 
-        name: 'fadeOut',
-        keyframes: [
-            { opacity: 1 },
-            { opacity: 0 }
-        ],
-        timings: {
-            duration: 900,
-            fill: 'both',
-            easing: 'ease-in'
-        }
-    }
-]);
-```
-#### CommonJS/SystemJS Usage
-``` javascript
-import { JustAnimate } from 'just-animate';
-
-JustAnimate.inject([
-    {
-        name: 'fadeIn',
-        keyframes: [
-            { opacity: 0 },
-            { opacity: 1 }
-        ],
-        timings: {
-            duration: 900,
-            fill: 'both',
-            easing: 'ease-out'
-        }
-    },
-    {
-        name: 'fadeOut',
-        keyframes: [
-            { opacity: 1 },
-            { opacity: 0 }
-        ],
-        timings: {
-            duration: 900,
-            fill: 'both',
-            easing: 'ease-in'
-        }
-    }
-]);
-```
-
-/**
-     * (description)
-     * 
-     * @static
-     * @param {ja.IAnimationOptions[]} animations (description)
-     */
-    public static inject(animations: ja.IAnimationOptions[]): void {
-        
-        Array.prototype.push.apply(DEFAULT_ANIMATIONS, map(animations, animationTransformer));
-    }
-
-    /**
-     * Creates an instance of JustAnimate.
-     */
-    constructor() {
-        this._registry = {};
-        each(DEFAULT_ANIMATIONS, (a: ja.IAnimationOptions) => this._registry[a.name] = a);
-    }
-
-    /**
-     * (description)
-     * 
-     * @param {(string | ja.IIndexed<ja.IKeyframe>)} keyframesOrName (description)
-     * @param {ja.ElementSource} el (description)
-     * @param {ja.IAnimationEffectTiming} [timings] (description)
-     * @returns {ja.IAnimator} (description)
-     */
-    public animate(keyframesOrName: string | ja.IIndexed<ja.IKeyframe>, 
-                   el: ja.ElementSource, 
-                   timings?: ja.IAnimationEffectTiming): ja.IAnimator {
-        return new ElementAnimator(this, keyframesOrName, el, timings);
-    }
-    /**
-     * (description)
-     * 
-     * @param {ja.ISequenceOptions} options (description)
-     * @returns {ja.IAnimator} (description)
-     */
-    public animateSequence(options: ja.ISequenceOptions): ja.IAnimator {
-        return new SequenceAnimator(this, options);
-    }
-    /**
-     * (description)
-     * 
-     * @param {ja.ITimelineOptions} options (description)
-     * @returns {ja.IAnimator} (description)
-     */
-    public animateTimeline(options: ja.ITimelineOptions): ja.IAnimator {
-        return new TimelineAnimator(this, options);
-    }
-    /**
-     * (description)
-     * 
-     * @param {string} name (description)
-     * @returns {ja.IKeyframeOptions} (description)
-     */
-    public findAnimation(name: string): ja.IKeyframeOptions {
-        return this._registry[name] || undefined;
-    }
-    /**
-     * (description)
-     * 
-     * @param {ja.IAnimationOptions} animationOptions (description)
-     * @returns {ja.IAnimationManager} (description)
-     */
-    public register(animationOptions: ja.IAnimationOptions): ja.IAnimationManager {        
-        this._registry[animationOptions.name] = animationTransformer(animationOptions);
-        return this;
-    }
