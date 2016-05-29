@@ -11,7 +11,6 @@ The API Reference provides detailed information on how each part of Just Animate
 
 If you see an error in the documentation or need an answer not provided here, please raise an issue on the [Just Animate GitHub Issues Page](https://github.com/just-animate/just-animate/issues)
 
-
 <a name="JustAnimate" class="nav-link"></a>
 
 ## JustAnimate
@@ -22,20 +21,124 @@ an instance must be explicitly created while bootstrapping the application.  Ple
 
 
 -----
-### animate(keyframes|name, el, timings?)
+### animate(keyframes|name, element, timing?)
 
-(construction zone... awaiting the proper permits...)
+Animates one or more elements using a preset animation or a set of keyframes.
+
+**keyframes**: [`ISequenceOptions`](#ISequenceOptions), sequence options
+
+**name**: ```string```, name of registered animation options
+
+**element**: [`ElementSource`](#ElementSource), source of elements
+
+**timing**: [`ITimingOptions`](#ITimingOptions), timing options. Optional when using name.  Required when specifying keyframes
+
+
+#### Usage with name
+
+``` javascript
+Just.animate('fadeIn', '#element');
+```
+
+#### Usage with keyframes
+
+``` javascript
+var keyframes = [
+    { opacity: 0 },
+    { opacity: 1 }
+];
+var timings = {
+    duration: 1000,
+    fill: 'both'
+    easing: 'ease-out'
+};
+
+Just.animate(keyframes, '#element', timings);
+```
+
 
 
 -----
 ### animateSequence(options)
 
-(construction zone... awaiting the proper permits...)
+Animates one or more elements as a series of steps.
+
+**options**: [`ISequenceOptions`](#ISequenceOptions), sequence options
+
+
+#### Usage
+
+``` javascript
+Just.animateSequence({
+    autoplay: true,
+    steps: [
+        {
+            el: '#element1',
+            name: 'fadeIn'
+        },
+        {
+            el: '#element1',
+            named: 'fadeOut'
+        },
+        {
+            el: '#element2',
+            keyframes: [
+                { backgroundColor: 'white' },
+                { backgroundColor: 'black' },
+            ],
+            timing: {
+                duration: 1000,
+                fill: 'forwards',
+                easing: 'ease-in-out'
+             }
+        }
+    ]
+});
+```
 
 -----
 ### animateTimeline(options)
 
-(construction zone... awaiting the proper permits...)
+Animates one or more elements as events in a timeline.
+
+**options**: [`ITimelineOptions`](#ITimelineOptions), timeline options
+
+#### Usage
+
+``` javascript
+Just.animateTimeline({
+    autoplay: true,
+    duration: 5000,
+    events: [
+        {
+            offset: 0,
+            el: '.element1',
+            keyframes: [
+                { left: 0 },
+                { left: '85%' }
+            ],
+            timings: {
+                duration: 4200,
+                fill: 'both',
+                easing: 'ease-in'
+            }
+        },
+        {
+            offset: 0,
+            el: '.element1',
+            keyframes: [
+                { left: 0 },
+                { left: '85%' }
+            ],
+            timings: {
+                duration: 5000,
+                fill: 'both',
+                easing: 'linear'
+            }
+        }
+    ]
+});
+```
 
 -----
 ### inject(animations)
@@ -43,7 +146,7 @@ an instance must be explicitly created while bootstrapping the application.  Ple
 Injects a list of animations into JustAnimate.  Only instances created after injection will have these animations.
 
 
-**Parameters**
+
 
 **animations**: [`IAnimationOptions`](#IAnimationOptions)[], list of animations to be injected
 
@@ -78,7 +181,9 @@ Just.inject([
     }
 ]);
 ```
+
 #### CommonJS/SystemJS Usage
+
 ``` javascript
 import { JustAnimate } from 'just-animate';
 
@@ -111,9 +216,48 @@ JustAnimate.inject([
 ```
 
 -----
+
 ### register(options)
 
-(construction zone... awaiting the proper permits...)
+**options**: [`IAnimationOptions`](#IAnimationOptions), animation to be registered
+
+#### Browser Usage
+
+``` javascript
+Just.register({
+    name: 'fadeIn',
+    keyframes: [
+        { opacity: 0 },
+        { opacity: 1 }
+    ],
+    timings: {
+        duration: 900,
+        fill: 'both',
+        easing: 'ease-out'
+    }
+});
+```
+
+#### Universal Usage
+
+``` javascript
+import { JustAnimate } from 'just-animate';
+
+var just = new JustAnimate();
+
+just.register({
+    name: 'fadeIn',
+    keyframes: [
+        { opacity: 0 },
+        { opacity: 1 }
+    ],
+    timings: {
+        duration: 900,
+        fill: 'both',
+        easing: 'ease-out'
+    }
+});
+```
 
 
 <a name="CSSAnimatedProperties" class="nav-link"></a>
@@ -700,7 +844,7 @@ This provides a common way to cancel, play, pause, etc.
 
 Cancels the animation
 
-**Parameters**
+
 
 **fn**: [`ICallbackHandler`](#ICallbackHandler), optional error handler
 
@@ -742,7 +886,7 @@ console.log(animator.currentTime);
 
 Completes the animation.  
 
-**Parameters**
+
 
 **fn**: [`ICallbackHandler`](#ICallbackHandler), optional error handler
 
@@ -802,7 +946,7 @@ animator.onfinish = function() {
 Pauses the animation
 
 
-**Parameters**
+
 
 **fn**: [`ICallbackHandler`](#ICallbackHandler), optional error handler
 
@@ -831,7 +975,7 @@ animator.pause(function(err) {
 
 Plays the animation
 
-**Parameters**
+
 
 **fn**: [`ICallbackHandler`](#ICallbackHandler), optional error handler
 
@@ -858,7 +1002,7 @@ animator.play(function(err) {
 -----
 ### playbackRate 
 
-Rate at which the animation is playing.  
+Rate at which the animation is playing. 
 Value is 0 when not playing, 1 when playing forward, and -1 when playing backward.
 Decimals are not supported at this time.
 #### Type: number
@@ -875,7 +1019,7 @@ console.log(animator.playbackRate);
 
 Reverses the direction of the animation
 
-**Parameters**
+
 
 **fn**: [`ICallbackHandler`](#ICallbackHandler), optional error handler
 
@@ -905,7 +1049,7 @@ animator.reverse(function(err) {
 
 Optional error handler
 
-**Parameters**
+
 
 **err**: `string|Error`, error message.
 
