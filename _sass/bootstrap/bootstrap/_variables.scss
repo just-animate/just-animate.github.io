@@ -15,7 +15,7 @@ $gray:                   lighten($gray-base, 33.5%) !default; // #555
 $gray-light:             lighten($gray-base, 70%) !default;   // #999
 $gray-lighter:           lighten($gray-base, 93.5%) !default; // #eee
 
-$brand-primary:         #4582EC !default;
+$brand-primary:         #226074 !default;
 $brand-success:         #3FAD46 !default;
 $brand-info:            #5bc0de !default;
 $brand-warning:         #f0ad4e !default;
@@ -44,7 +44,7 @@ $link-hover-decoration: underline !default;
 //## Font, line-height, and color for body text, headings, and more.
 
 $font-family-sans-serif:  'Montserrat', sans-serif !default;
-$font-family-serif:       'Cardo', serif !default;
+$font-family-serif:       'Open Sans', 'Helvetica', 'Arial', san-serif !default;
 //** Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
 $font-family-monospace:   'Source Code Pro' !default;
 $font-family-base:        $font-family-serif !default;
@@ -366,12 +366,12 @@ $navbar-padding-vertical:          (($navbar-height - $line-height-computed) / 2
 $navbar-collapse-max-height:       340px !default;
 
 $navbar-default-color:             $text-color !default;
-$navbar-default-bg:                $body-bg !default;
+$navbar-default-bg:                #000 !default;
 $navbar-default-border:            #ddd !default;
 
 // Navbar links
-$navbar-default-link-color:                $link-color !default;
-$navbar-default-link-hover-color:          $link-color !default;
+$navbar-default-link-color:                #28CAFF !default;
+$navbar-default-link-hover-color:          #9BE2F9 !default;
 $navbar-default-link-hover-bg:             transparent !default;
 $navbar-default-link-active-color:         $navbar-default-link-color !default;
 $navbar-default-link-active-bg:            transparent !default;

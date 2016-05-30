@@ -6,14 +6,15 @@
   <title>{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}</title>
   <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
   
-  <link href='https://fonts.googleapis.com/css?family=Cardo|Montserrat:400,700|Source+Code+Pro' rel='stylesheet' type='text/css' />
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans|Montserrat:400,700|Source+Code+Pro' rel='stylesheet' type='text/css' />
   <link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}">
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
   <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}">
-  <link rel="stylesheet"  href="/assets/prism.css" type="text/css" />
+  <link rel="stylesheet"  href="/assets/prism_dark.css" type="text/css" />
+  
   <script src="/assets/jquery-2.2.3.min.js"></script>
   <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-  <script src="/assets/prism.js"></script>
+  <script src="/assets/prism_dark.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/web-animations/2.1.4/web-animations.min.js"></script>
   <script src="https://cdn.rawgit.com/just-animate/just-animate/7a11f107ffb56265e53d04fc73687becef313581/dist/browser/just-animate-core.min.js"></script>
   <script src="https://cdn.rawgit.com/just-animate/just-animate/7a11f107ffb56265e53d04fc73687becef313581/dist/browser/just-animate-animations.min.js"></script>
