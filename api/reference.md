@@ -1139,22 +1139,154 @@ Offset is optional when no other keyframe has specified an offset.  Just Animate
 
 ## ISequenceEvent
 
-(construction zone... awaiting the proper permits...)
+A single step in a sequence animation.
+
+-----
+
+### el
+
+Elements to animate.
+
+#### Type: [`ElementSource`](#ElementSource)
+
+-----
+
+### keyframes
+
+Keyframes to play at this step. Either a name or keyframes must be provided.
+
+#### Type: [`IKeyframe`](#IKeyframe) []
+
+-----
+
+### name
+
+Registered animation to play. Either a name or keyframes must be provided.
+
+#### Type: string
+
+-----
+
+### timings
+
+Animation timing options.  Required when using keyframes.
+
+#### Type: [`IAnimationEffectTiming`](#IAnimationEffectTiming)
 
 <a name="ISequenceOptions"  class="nav-link"></a>
 
 ## ISequenceOptions
 
-(construction zone... awaiting the proper permits...)
+Options for constructing a sequence animation.
+
+#### Usage
+```javascript
+var sequenceOptions = {
+    autoplay: true,
+    steps: [ /* ...steps... */ ]
+};
+
+Just.animateSequence(sequenceOptions);
+```
+
+### steps
+
+Steps in the sequence.  Each step animates one or more elements.
+
+#### Type: [`ISequenceEvent`](#ISequenceEvent)[]
+
+-----
+
+### autoplay
+
+Set to true if the sequence animation should begin playback immediately. Default value is false.
+
+#### Type: boolean (optional)
+
 
 <a name="ITimelineEvent"  class="nav-link"></a>
 
 ## ITimelineEvent
 
-(construction zone... awaiting the proper permits...)
+An event in a timeline animation.
+
+-----
+
+### el
+
+Elements to animate.
+
+#### Type: [`ElementSource`](#ElementSource)
+
+-----
+
+### keyframes
+
+Keyframes to play at this offset. Either a name or keyframes must be provided.
+
+#### Type: [`IKeyframe`](#IKeyframe)[]
+
+-----
+
+### name
+
+Registered animation to play at this offset. Either a name or keyframes must be provided.
+
+#### Type: string
+
+-----
+
+### offset
+
+Offset from the being of the Timeline. A number between 0 and 1.
+
+#### Type: number
+
+-----
+
+### timings
+
+Animation timing options.  Required when using keyframes.
+
+#### Type: [`IAnimationEffectTiming`](#IAnimationEffectTiming)
 
 <a name="ITimelineOptions"  class="nav-link"></a>
 
 ## ITimelineOptions
 
-(construction zone... awaiting the proper permits...)
+Options for constructing a timeline animation.
+
+#### Usage
+```javascript
+var timelineOptions = {
+    autoplay: true,
+    duration: 1000,
+    events: [ /* ...events... */ ]
+};
+
+Just.animateTimeline(timelineOptions);
+```
+
+-----
+
+### events
+
+Events on the timeline.  Each event specifies when an animation should be played offset from the beginning of the timeline.
+
+#### Type: [`ITimelineEvent`](#ITimelineEvent)[]
+
+-----
+
+### duration
+
+Set to the total time in milliseconds of the timeline animation
+
+#### Type: number
+
+-----
+
+### autoplay
+
+Set to true if the timeline animation should begin playback immediately. Default value is false.
+
+#### Type: boolean (optional)
