@@ -64,9 +64,17 @@ $(document).ready(function () {
         var target = $('a[name="' + aName + '"]');
         if (target.length) {
             event.preventDefault();
-            $('html, body').animate({
-                scrollTop: target.offset().top
-            }, 450);
+            var player = $('html, body').animate(
+                {
+                    scrollTop: target.offset().top
+                },
+                {
+                    duration: 450,
+                    complete: function () {
+                        location.hash = href;
+                    }
+                }
+            );
         }
     });
 });

@@ -25,7 +25,7 @@ an instance must be explicitly created while bootstrapping the application.  Ple
 
 Animates one or more elements using a preset animation or a set of keyframes.
 
-**keyframes**: [`ISequenceOptions`](#ISequenceOptions), sequence options
+**keyframes**: [`IKeyframe`](#IKeyframe)[], sequence options
 
 **name**: ```string```, name of registered animation options
 
@@ -887,7 +887,29 @@ Number of times the animation should play.  By default this is set to 1.  To pla
 
 ## IAnimationOptions
 
-(construction zone... awaiting the proper permits...)
+Animation options used to construct an element animation.
+
+### keyframes
+
+Keyframes that make up the animation.
+
+#### Type: [`IKeyframe`](#IKeyframe)[]
+
+-----
+
+### name
+
+Name of the animation.  Used in ```.inject()``` and ```.register()``` and otherwise ignored.
+
+#### Type: string (optional)
+
+-----
+
+### timings
+
+Animation timing options
+
+#### Type: [`IAnimationEffectTiming`](#IAnimationEffectTiming)
 
 <a name="IAnimator" class="nav-link"></a>
 
@@ -1123,7 +1145,10 @@ var errorHandler = function (err) {
 
 ## IKeyframe
 
-A single keyframe in an animation. Each keyframe has an offset property and CSS properties.  See [CSS Transform Shorthand Properties](#CSSTransformProperties) and [CSS Animated Properties](#CSSAnimatedProperties) for more information.
+A single keyframe in an animation. Each keyframe has an offset property and CSS properties.
+
+- See [CSS Transform Shorthand Properties](#CSSTransformProperties) for Just Animate transform properties
+- See [CSS Animated Properties](#CSSAnimatedProperties) for other animated properties
 
 -----
 ### offset
