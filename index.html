@@ -1,35 +1,463 @@
----
-layout: default
----
+<!doctype html>
+<html class="no-js" lang="">
 
-<h2>About Just Animate 0.6.2</h2>
-<p>
-  Just Animate makes it easy to animate websites.  It comes with over 70 animations for entrances, exits, and of course fun.  The main goal of Just Animate is
-  to provide a simple way to get started with animations built upon the Web Animations API and to grow from there to building animation sequences and more complex timelines.
-</p>
-<div class="alert alert-info" role="alert">
-  For the 1.0.0 beta, please go to <a href="https://github.com/just-animate/just-animate">GitHub</a>
-</div>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Montserrat:400,700" />
+    <style>
+        body {
+            overflow: hidden;
+            font-size: 15pt;
+            background-color: #001;
+            color: #28CAFF;
+        }
+        
+        #githubBanner,
+        #starWrapper,
+        #actionWrapper a,
+        #animateButton,
+        #animateSelect {
+            opacity: 0;
+        }
+        
+        #actionWrapper {
+            margin: 1rem;
+        }
+        
+        #actionWrapper button {
+            height: 4.25rem;
+            width: 9.4rem;
+            padding: 1rem;
+            font-size: 10pt;
+            margin-top: 2rem;
+            margin-left: .5em;
+            margin-right: .5rem;
+            cursor: pointer;
+            vertical-align: top;
+            background-color: transparent;
+            color: #28CAFF;
+            border: solid thin hsla(195, 100%, 14%, 1);
+            display: inline-block;
+        }
+        
+        #animateLabel {
+            font-family: Montserrat;
+            font-size: 4em;
+            margin-bottom: .5em;
+        }
+        
+        #animateLabel span {
+            display: inline-block;
+            opacity: 0;
+        }
+        
+        #animateButton {
+            vertical-align: top;
+            height: 2.2rem;
+            border-style: groove;
+            border-radius: 0.2rem 0.4rem 0.4rem 0.2rem;
+            padding: 0.35rem 1rem;
+            cursor: pointer;
+            font-size: 12.5pt;
+        }
+        
+        #animateSelect {
+            vertical-align: top;
+            height: 2.2rem;
+            border-radius: 0.4rem 0.2rem 0.2rem 0.4rem;
+            padding: 0.35rem 1rem;
+            font-size: 14pt;
+        }
+        
+        #starWrapper {
+            position: fixed;
+            right: 3.75rem;
+            top: 4.35rem;
+        }
+        
+        .centered-wrap {
+            display: table;
+            text-align: center;
+            width: 100vw;
+            height: 100vh;
+            margin-top: -11vh;
+            overflow: hidden;
+        }
+        
+        .centered-wrap>.centered {
+            display: table-cell;
+            text-align: center;
+            vertical-align: middle;
+        }
+        
+        #greenPixlContainer {
+            opacity: 0;
+            position: fixed;
+            bottom: 1.25rem;
+            left: 2rem;
+        }
+        
+        .green.pixl {
+            border: solid 2px darkgreen;
+            background-color: green;
+            cursor: pointer;
+            border-radius: 30% 30% 20% 20%;
+            height: 25px;
+            width: 25px;
+            text-align: center;
+            transform-origin: center center;
+            padding: 1em;
+            position: relative;
+        }
+        
+        .green.pixl .eye {
+            position: absolute;
+            width: 27%;
+            height: 40%;
+            background-color: white;
+            border: solid thin black;
+            border-radius: 45%;
+        }
+        
+        .green.pixl .eye.left {
+            left: 28%;
+            bottom: 17.5%;
+            border-top-left-radius: 60%;
+            border-bottom-right-radius: 60%;
+        }
+        
+        .green.pixl .eye.right {
+            right: 20%;
+            bottom: 18%;
+            border-top-right-radius: 60%;
+            border-bottom-left-radius: 60%;
+            transform: scale(.65);
+        }
+        
+        .green.pixl .eye .pupil {
+            position: absolute;
+            right: 10%;
+            bottom: 20%;
+            width: 40%;
+            height: 50%;
+            background-color: black;
+            border-radius: 50%;
+            animation: pixlSlightEyeMovement 2.2s Infinite alternate ease-out;
+        }
+        
+        .green.pixl .eye .pupil .reflection {
+            position: absolute;
+            left: 30%;
+            bottom: 10%;
+            border-radius: 50%;
+            width: 20%;
+            height: 20%;
+            background-color: white;
+        }
+        
+        .green.pixl .tongue {
+            position: absolute;
+            background-color: maroon;
+            height: 15%;
+            width: 30%;
+            border-radius: 20% 30% 50% 50%;
+            border: solid 1px black;
+            bottom: 0;
+            right: 35%;
+        }
+        
+        @keyframes pixlSlightEyeMovement {
+            0% {
+                transform: none;
+            }
+            100% {
+                transform: translate(-5px, -2px);
+            }
+        }
+    </style>
+</head>
 
-<h3>Getting Started</h3>
-<ul>
-  <li>
-    If your project uses Angular 1.x, please read the <a href="/how-to/get-started-with-angular1">Getting Started - Angular 1.x</a> documentation
-  </li>
-  <li>
-    If your project uses Angular 2.x, SystemJS, WebPack, Browserify, or RollupJS, please read the <a href="/how-to/get-started-with-angular2">Getting Started - Angular 2.0</a> documentation
-  </li>
-  <li>
-    Otherwise, please read the <a href="/how-to/get-started">Getting Started</a> documentation
-  </li>
-</ul>
+<body>
+    <div id="greenPixlContainer">
+        <div class="green pixl">
+            <div class="eye left">
+                <div class="pupil">
+                    <div class="reflection"></div>
+                </div>
+            </div>
+            <div class="eye right">
+                <div class="pupil">
+                    <div class="reflection"></div>
+                </div>
+            </div>
+            <div class="tongue"></div>
+        </div>
+    </div>
 
-<h3>API Reference</h3>
-<p>
-  Sometimes examples are not enough.  For more advanced inquiries, check out the <a href="/api/reference">API Reference</a>. 
-</p>
+    <a id="githubBanner" target="_blank" href="https://github.com/just-animate/just-animate"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/652c5b9acfaddf3a9c326fa6bde407b87f7be0f4/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6f72616e67655f6666373630302e706e67"
+            alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_orange_ff7600.png"></a>
 
-<h3>Have a problem?</h3>
-<p>
-   If the API Reference and examples don't cut it, submit <a href="/api/reference">an issue on our GitHub</a>. 
-</p>
+    <div id="starWrapper">
+        <iframe src="https://ghbtns.com/github-btn.html?user=just-animate&repo=just-animate&type=star&count=true&size=large" frameborder="0" scrolling="0" width="160px" height="30px"></iframe>
+    </div>
+
+    <div class="layer">
+        <div class="centered-wrap">
+            <div class="centered">
+                <h1 id="animateLabel">
+                    <span>J</span><span>u</span><span>s</span><span>t</span><span>&nbsp;</span><span>A</span><span>n</span><span>i</span><span>m</span><span>a</span><span>t</span><span>e</span>
+                </h1>
+                <div class="input-group">
+                    <select id="animateSelect" class="form-control">
+                      <option>bounce</option>
+                      <option>bounceIn</option>              
+                      <option>bounceInDown</option>
+                      <option>bounceInLeft</option>
+                      <option>bounceInRight</option>
+                      <option>bounceInUp</option>
+                      <option>bounceOut</option>
+                      <option>bounceOutDown</option>
+                      <option>bounceOutLeft</option>
+                      <option>bounceOutRight</option>
+                      <option>bounceOutUp</option>
+                      <option>fadeIn</option>
+                      <option>fadeInDown</option>
+                      <option>fadeInDownBig</option>
+                      <option>fadeInLeft</option>
+                      <option>fadeInLeftBig</option>
+                      <option>fadeInRight</option>
+                      <option>fadeInRightBig</option>
+                      <option>fadeInUp</option>
+                      <option>fadeInUpBig</option>
+                      <option>fadeOut</option>
+                      <option>fadeOutDown</option>
+                      <option>fadeOutDownBig</option>
+                      <option>fadeOutLeft</option>
+                      <option>fadeOutLeftBig</option>
+                      <option>fadeOutRight</option>
+                      <option>fadeOutRightBig</option>
+                      <option>fadeOutUp</option>
+                      <option>fadeOutUpBig</option>
+                      <option>flash</option>
+                      <option>flip</option>
+                      <option>flipInX</option>
+                      <option>flipInY</option>
+                      <option>flipOutX</option>
+                      <option>flipOutY</option>
+                      <option>headShake</option>
+                      <option>hinge</option>
+                      <option>jello</option>
+                      <option>lightSpeedIn</option>
+                      <option>lightSpeedOut</option>
+                      <option>pulse</option>
+                      <option>rollIn</option>
+                      <option>rollOut</option>
+                      <option>rotateIn</option>
+                      <option>rotateInDownLeft</option>
+                      <option>rotateInDownRight</option>
+                      <option>rotateInUpLeft</option>
+                      <option>rotateInUpRight</option>
+                      <option>rotateOut</option>
+                      <option>rotateOutDownLeft</option>
+                      <option>rotateOutDownRight</option>
+                      <option>rotateOutUpLeft</option>
+                      <option>rotateOutUpRight</option>
+                      <option>rubberBand</option>
+                      <option>shake</option>
+                      <option>slideInDown</option>
+                      <option>slideInLeft</option>
+                      <option>slideInRight</option>
+                      <option>slideInUp</option>
+                      <option>slideOutDown</option>
+                      <option>slideOutLeft</option>
+                      <option>slideOutRight</option>
+                      <option>slideOutUp</option>
+                      <option>swing</option>
+                      <option>tada</option>
+                      <option>wobble</option>
+                      <option>zoomIn</option>
+                      <option>zoomInDown</option>
+                      <option>zoomInLeft</option>
+                      <option>zoomInRight</option>
+                      <option selected>zoomInUp</option>
+                      <option>zoomOut</option>
+                      <option>zoomOutDown</option>
+                      <option>zoomOutLeft</option>
+                      <option>zoomOutRight</option>
+                      <option>zoomOutUp</option>
+                    </select>
+                    <button id="animateButton">Animate</button>
+                </div>
+                <div id="actionWrapper">
+                    <a href="http://codepen.io/collection/ANzZxb/" target="_blank"><button>Live Examples</button></a>
+                    <a href="https://github.com/just-animate/just-animate" target="_blank"><button>Documentation</button></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/web-animations/2.2.2/web-animations.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/just-animate/1.0.1/just-animate-core.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/just-animate/1.0.1/just-animate-animations.js"></script>
+    <script>
+        (function() {
+            'use strict';
+            var $select = document.getElementById('animateSelect');
+            var $button = document.getElementById('animateButton');
+            var $greenPixl = document.querySelector('.green.pixl');
+
+            var animation;
+            var greenAnimation;
+
+            function animateIntro() {
+                just.animate({
+                        targets: '#animateLabel span',
+                        delay: '+=125ms',
+                        mixins: 'zoomInUp',
+                        fill: 'both',
+                        on: {
+                            created: function(ctx) {
+                                ctx.target.style.opacity = 1;
+                            }
+                        }
+                    })
+                    .animate({
+                        targets: [
+                            '#animateSelect',
+                            '#animateButton',
+                            '#actionWrapper a',
+                            '#starWrapper',
+                            '#githubBanner',
+                            '#greenPixlContainer'
+                        ],
+                        delay: '+=175ms',
+                        to: '1s',
+                        mixins: 'fadeIn',
+                        on: {
+                            created: function(ctx) {
+                                ctx.target.style.opacity = 1;
+                            }
+                        }
+                    })
+                    .on({
+                        finish: jumpForJoy
+                    });
+            }
+
+            function animateTitle(mixinName) {
+                if (animation) {
+                    animation.cancel();
+                }
+                animation = just.animate({
+                        targets: '#animateLabel span',
+                        delay: '+=125ms',
+                        mixins: mixinName,
+                        fill: 'both'
+                    })
+                    .on('finish', function() {
+                        animation.cancel();
+                    });
+            }
+
+            function animateGreenPixl() {
+                if (greenAnimation) {
+                    greenAnimation.cancel();
+                }
+                var randomAnimation = just.shuffle([{
+                    targets: '.pixl',
+                    mixins: 'jello'
+                }, {
+                    targets: '.pixl',
+                    to: '2s',
+                    css: {
+                        rotateX: [0, '360deg'],
+                        rotateY: [0, '180deg'],
+                    },
+                    direction: 'alternate',
+                    iterations: 2
+                }, {
+                    targets: $greenPixl,
+                    to: '1.5s',
+                    fill: 'forwards',
+                    easing: 'ease-in-out',
+                    css: [{
+                        transform: 'rotate(0)'
+                    }, {
+                        transform: 'rotate(360deg)'
+                    }]
+                }, {
+                    targets: '.pixl',
+                    to: '6s',
+                    css: [{
+                        offset: 0,
+                        transform: 'none'
+                    }, {
+                        offset: .25,
+                        x: '200px',
+                        rotate: '180deg'
+                    }, {
+                        offset: .75,
+                        x: '-200px',
+                        rotate: '-180deg'
+                    }, {
+                        offset: 1,
+                        transform: 'none'
+                    }]
+                }]);
+
+                greenAnimation = just
+                    .animate(randomAnimation)
+                    .on('finish', jumpForJoy);
+            }
+
+            function jumpForJoy() {
+                if (greenAnimation) {
+                    greenAnimation.cancel();
+                }
+                greenAnimation = just.animate({
+                        targets: '.pixl',
+                        delay: '1500ms',
+                        mixins: 'bounce',
+                        to: 1200
+                    })
+                    .play(Infinity);
+            }
+
+            function onReanimate() {
+                // spooky!
+                const val = $select.options[$select.selectedIndex].value
+                animateTitle(val);
+            }
+
+            $select.addEventListener('change', onReanimate);
+            $button.addEventListener('click', onReanimate);
+            $greenPixl.addEventListener('click', animateGreenPixl);
+
+            animateIntro();
+        })();
+    </script>
+
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+    <!--<script>
+        (function(b, o, i, l, e, r) {
+            b.GoogleAnalyticsObject = l;
+            b[l] || (b[l] =
+                function() {
+                    (b[l].q = b[l].q || []).push(arguments)
+                });
+            b[l].l = +new Date;
+            e = o.createElement(i);
+            r = o.getElementsByTagName(i)[0];
+            e.src = 'https://www.google-analytics.com/analytics.js';
+            r.parentNode.insertBefore(e, r)
+        }(window, document, 'script', 'ga'));
+        ga('create', 'UA-XXXXX-X', 'auto');
+        ga('send', 'pageview');
+    </script>-->
+</body>
+
+</html>
