@@ -208,9 +208,7 @@
     <div class="layer">
         <div class="centered-wrap">
             <div class="centered">
-                <h1 id="animateLabel">
-                    <span>J</span><span>u</span><span>s</span><span>t</span><span>&nbsp;</span><span>A</span><span>n</span><span>i</span><span>m</span><span>a</span><span>t</span><span>e</span>
-                </h1>
+                <h1 id="animateLabel">Just Animate</h1>
                 <div class="input-group">
                     <select id="animateSelect" class="form-control">
                       <option>bounce</option>
@@ -301,8 +299,7 @@
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/web-animations/2.2.2/web-animations.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/just-animate/1.0.1/just-animate-core.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/just-animate/1.0.1/just-animate-animations.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/just-animate/1.1.0/just-animate-all.min.js"></script>
     <script>
         (function() {
             'use strict';
@@ -312,10 +309,11 @@
 
             var animation;
             var greenAnimation;
+            var letters = just.splitText('#animateLabel').characters;
 
             function animateIntro() {
                 just.animate({
-                        targets: '#animateLabel span',
+                        targets: letters,
                         delay: '+=125ms',
                         mixins: 'zoomInUp',
                         fill: 'both',
@@ -353,7 +351,7 @@
                     animation.cancel();
                 }
                 animation = just.animate({
-                        targets: '#animateLabel span',
+                        targets: letters,
                         delay: '+=125ms',
                         mixins: mixinName,
                         fill: 'both'
