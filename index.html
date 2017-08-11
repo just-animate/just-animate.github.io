@@ -9,444 +9,288 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Montserrat:400,700" />
     <style>
+        html {
+            height: 100%;
+        }
+
         body {
+            background: #1c1c1c;
+            height: 100%;
             overflow: hidden;
-            font-size: 15pt;
-            background-color: #001;
-            color: #28CAFF;
-        }
-        
-        #githubBanner,
-        #starWrapper,
-        #actionWrapper a,
-        #animateButton,
-        #animateSelect {
-            opacity: 0;
-        }
-        
-        #actionWrapper {
-            margin: 1rem;
-        }
-        
-        #actionWrapper button {
-            height: 4.25rem;
-            width: 9.4rem;
-            padding: 1rem;
-            font-size: 10pt;
-            margin-top: 2rem;
-            margin-left: .5em;
-            margin-right: .5rem;
-            cursor: pointer;
-            vertical-align: top;
-            background-color: transparent;
-            color: #28CAFF;
-            border: solid thin hsla(195, 100%, 14%, 1);
-            display: inline-block;
-        }
-        
-        #animateLabel {
-            font-family: Montserrat;
-            font-size: 4em;
-            margin-bottom: .5em;
-        }
-        
-        #animateLabel span {
-            display: inline-block;
-            opacity: 0;
-        }
-        
-        #animateButton {
-            vertical-align: top;
-            height: 2.2rem;
-            border-style: groove;
-            border-radius: 0.2rem 0.4rem 0.4rem 0.2rem;
-            padding: 0.35rem 1rem;
-            cursor: pointer;
+            font-family: Montserrat, sans-serif;
             font-size: 12.5pt;
         }
-        
-        #animateSelect {
-            vertical-align: top;
-            height: 2.2rem;
-            border-radius: 0.4rem 0.2rem 0.2rem 0.4rem;
-            padding: 0.35rem 1rem;
-            font-size: 14pt;
-        }
-        
+
         #starWrapper {
             position: fixed;
             right: 3.75rem;
             top: 4.35rem;
         }
-        
-        .centered-wrap {
-            display: table;
-            text-align: center;
-            width: 100vw;
-            height: 100vh;
-            margin-top: -11vh;
-            overflow: hidden;
+
+        #hero {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            height: 100%;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
         }
-        
-        .centered-wrap>.centered {
-            display: table-cell;
-            text-align: center;
-            vertical-align: middle;
-        }
-        
-        #greenPixlContainer {
-            opacity: 0;
-            position: fixed;
-            bottom: 1.25rem;
-            left: 2rem;
-        }
-        
-        .green.pixl {
-            border: solid 2px darkgreen;
-            background-color: green;
-            cursor: pointer;
-            border-radius: 30% 30% 20% 20%;
-            height: 25px;
-            width: 25px;
-            text-align: center;
-            transform-origin: center center;
-            padding: 1em;
+
+        #container {
+            margin-left: auto;
+            margin-right: auto;
             position: relative;
+            width: 300px;
+            height: 260px;
         }
-        
-        .green.pixl .eye {
+
+        #demoDocs {
             position: absolute;
-            width: 27%;
-            height: 40%;
-            background-color: white;
-            border: solid thin black;
-            border-radius: 45%;
+            bottom: -106px;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            height: 80px;
         }
-        
-        .green.pixl .eye.left {
-            left: 28%;
-            bottom: 17.5%;
-            border-top-left-radius: 60%;
-            border-bottom-right-radius: 60%;
+
+        #demoDocs>a {
+            flex-basis: 46%;
+            margin: 2px;
+            background: none;
+            color: #fefefe;
+            border: solid thin #9aa5bf;
+            display: inline-block;
+            text-decoration: none;
+            line-height: 73px;
+            text-align: center;
+            transition: transform 300ms ease-in-out;
+            background-color: rgba(0, 0, 0, .4);
+            border-radius: 5px;
         }
-        
-        .green.pixl .eye.right {
-            right: 20%;
-            bottom: 18%;
-            border-top-right-radius: 60%;
-            border-bottom-left-radius: 60%;
-            transform: scale(.65);
+
+        #demoDocs>a:hover {
+            transform: translateY(-10px) scale(1.1)
         }
-        
-        .green.pixl .eye .pupil {
+
+        #demoDocs>a:active {
+            transform: translateY(-5px) scale(.98)
+        }
+
+        #A,
+        #J,
+        #words path {
+            opacity: 0;
+        }
+
+        #J {
             position: absolute;
-            right: 10%;
-            bottom: 20%;
-            width: 40%;
-            height: 50%;
-            background-color: black;
-            border-radius: 50%;
-            animation: pixlSlightEyeMovement 2.2s Infinite alternate ease-out;
+            z-index: 1;
+            top: 0;
+            left: -15px;
+            width: 200px;
+            height: 200px;
         }
-        
-        .green.pixl .eye .pupil .reflection {
+
+        #J path {
+            fill: none;
+            stroke: white;
+            stroke-width: 6.74;
+            stroke-linecap: round;
+        }
+
+        #A path {
+            fill: #7AC7C4;
+        }
+
+        #A {
             position: absolute;
-            left: 30%;
-            bottom: 10%;
-            border-radius: 50%;
-            width: 20%;
-            height: 20%;
-            background-color: white;
+            z-index: 2;
+            top: 10px;
+            left: 105px;
+            width: 200px;
+            height: 200px;
+            -webkit-transform-origin: center center;
+            transform-origin: center center;
         }
-        
-        .green.pixl .tongue {
+
+        #words {
             position: absolute;
-            background-color: maroon;
-            height: 15%;
-            width: 30%;
-            border-radius: 20% 30% 50% 50%;
-            border: solid 1px black;
-            bottom: 0;
-            right: 35%;
+            bottom: 10px;
+            left: 0;
+            width: 100%;
+            height: 45px;
         }
-        
-        @keyframes pixlSlightEyeMovement {
-            0% {
-                transform: none;
-            }
-            100% {
-                transform: translate(-5px, -2px);
-            }
+
+        #words path {
+            fill: #9ba6c0;
         }
     </style>
 </head>
 
 <body>
-    <div id="greenPixlContainer">
-        <div class="green pixl">
-            <div class="eye left">
-                <div class="pupil">
-                    <div class="reflection"></div>
-                </div>
-            </div>
-            <div class="eye right">
-                <div class="pupil">
-                    <div class="reflection"></div>
-                </div>
-            </div>
-            <div class="tongue"></div>
-        </div>
-    </div>
 
-    <a id="githubBanner" target="_blank" href="https://github.com/just-animate/just-animate"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/652c5b9acfaddf3a9c326fa6bde407b87f7be0f4/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6f72616e67655f6666373630302e706e67"
+    <a id="githubBanner" target="_blank" href="https://github.com/just-animate/just-animate"><img style="position: absolute; top: 0; right: 0; border: 0;"
+        src="https://camo.githubusercontent.com/652c5b9acfaddf3a9c326fa6bde407b87f7be0f4/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6f72616e67655f6666373630302e706e67"
             alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_orange_ff7600.png"></a>
 
     <div id="starWrapper">
-        <iframe src="https://ghbtns.com/github-btn.html?user=just-animate&repo=just-animate&type=star&count=true&size=large" frameborder="0" scrolling="0" width="160px" height="30px"></iframe>
+        <iframe src="https://ghbtns.com/github-btn.html?user=just-animate&repo=just-animate&type=star&count=true&size=large" frameborder="0"
+            scrolling="0" width="160px" height="30px"></iframe>
     </div>
 
-    <div class="layer">
-        <div class="centered-wrap">
-            <div class="centered">
-                <h1 id="animateLabel">Just Animate</h1>
-                <div class="input-group">
-                    <select id="animateSelect" class="form-control">
-                      <option>bounce</option>
-                      <option>bounceIn</option>              
-                      <option>bounceInDown</option>
-                      <option>bounceInLeft</option>
-                      <option>bounceInRight</option>
-                      <option>bounceInUp</option>
-                      <option>bounceOut</option>
-                      <option>bounceOutDown</option>
-                      <option>bounceOutLeft</option>
-                      <option>bounceOutRight</option>
-                      <option>bounceOutUp</option>
-                      <option>fadeIn</option>
-                      <option>fadeInDown</option>
-                      <option>fadeInDownBig</option>
-                      <option>fadeInLeft</option>
-                      <option>fadeInLeftBig</option>
-                      <option>fadeInRight</option>
-                      <option>fadeInRightBig</option>
-                      <option>fadeInUp</option>
-                      <option>fadeInUpBig</option>
-                      <option>fadeOut</option>
-                      <option>fadeOutDown</option>
-                      <option>fadeOutDownBig</option>
-                      <option>fadeOutLeft</option>
-                      <option>fadeOutLeftBig</option>
-                      <option>fadeOutRight</option>
-                      <option>fadeOutRightBig</option>
-                      <option>fadeOutUp</option>
-                      <option>fadeOutUpBig</option>
-                      <option>flash</option>
-                      <option>flip</option>
-                      <option>flipInX</option>
-                      <option>flipInY</option>
-                      <option>flipOutX</option>
-                      <option>flipOutY</option>
-                      <option>headShake</option>
-                      <option>hinge</option>
-                      <option>jello</option>
-                      <option>lightSpeedIn</option>
-                      <option>lightSpeedOut</option>
-                      <option>pulse</option>
-                      <option>rollIn</option>
-                      <option>rollOut</option>
-                      <option>rotateIn</option>
-                      <option>rotateInDownLeft</option>
-                      <option>rotateInDownRight</option>
-                      <option>rotateInUpLeft</option>
-                      <option>rotateInUpRight</option>
-                      <option>rotateOut</option>
-                      <option>rotateOutDownLeft</option>
-                      <option>rotateOutDownRight</option>
-                      <option>rotateOutUpLeft</option>
-                      <option>rotateOutUpRight</option>
-                      <option>rubberBand</option>
-                      <option>shake</option>
-                      <option>slideInDown</option>
-                      <option>slideInLeft</option>
-                      <option>slideInRight</option>
-                      <option>slideInUp</option>
-                      <option>slideOutDown</option>
-                      <option>slideOutLeft</option>
-                      <option>slideOutRight</option>
-                      <option>slideOutUp</option>
-                      <option>swing</option>
-                      <option>tada</option>
-                      <option>wobble</option>
-                      <option>zoomIn</option>
-                      <option>zoomInDown</option>
-                      <option>zoomInLeft</option>
-                      <option>zoomInRight</option>
-                      <option selected>zoomInUp</option>
-                      <option>zoomOut</option>
-                      <option>zoomOutDown</option>
-                      <option>zoomOutLeft</option>
-                      <option>zoomOutRight</option>
-                      <option>zoomOutUp</option>
-                    </select>
-                    <button id="animateButton">Animate</button>
-                </div>
-                <div id="actionWrapper">
-                    <a href="http://codepen.io/collection/ANzZxb/" target="_blank"><button>Live Examples</button></a>
-                    <a href="https://github.com/just-animate/just-animate" target="_blank"><button>Documentation</button></a>
-                </div>
+    <div id="hero">
+        <div id="container">
+            <div id="J">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+                    <g transform="matrix(-1.03808,0,0,1.03808,1204.03,-295.045)">
+                        <g transform="matrix(1.06558,0,0,1.0234,-28.1216,7.91886)">
+                            <path d="M1040.5,278l39.1,78.2L1040.5,278z" />
+                        </g>
+                        <g transform="matrix(1,0,0,1,-37,0)">
+                            <path d="M1113.4,301.7l4.3-9.3" />
+                        </g>
+                        <path d="M1122.7,372.4l19.2-25.4" />
+                    </g>
+                </svg>
+            </div>
+
+            <div id="A">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 86 86">
+                    <path d="M38.9,0l39.3,78.2H0L38.9,0z" />
+                </svg>
+            </div>
+
+
+            <div id="words">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 143.67 29.33">
+                    <g>
+                        <path d="M6.07,5.13V4.51a.59.59,0,0,1,.22-.46.71.71,0,0,1,.47-.19.61.61,0,0,1,.45.19.63.63,0,0,1,.19.46v.62a.67.67,0,0,1-.19.47.59.59,0,0,1-.45.2.68.68,0,0,1-.47-.2A.63.63,0,0,1,6.07,5.13ZM4.58,26.47A.6.6,0,0,1,4.39,26a.64.64,0,0,1,.19-.47.7.7,0,0,1,.51-.19.88.88,0,0,0,.62-.3,1,1,0,0,0,.3-.7V8.87a.69.69,0,0,1,.68-.68.61.61,0,0,1,.46.2.67.67,0,0,1,.19.47V24.34A2.27,2.27,0,0,1,5,26.64.65.65,0,0,1,4.58,26.47Z"
+                        />
+                        <path d="M10.81,16.05V8.82a.65.65,0,1,1,1.3,0v7.23A4,4,0,0,0,13.3,19a4,4,0,0,0,2.87,1.22A4.09,4.09,0,0,0,19.09,19a3.92,3.92,0,0,0,1.21-2.9V8.82a.61.61,0,0,1,.2-.46A.67.67,0,0,1,21,8.17a.65.65,0,0,1,.65.65v7.23a5.41,5.41,0,0,1-5.42,5.42,5.18,5.18,0,0,1-3.82-1.58A5.24,5.24,0,0,1,10.81,16.05Z"
+                        />
+                        <path d="M24.14,19.57a.56.56,0,0,1-.08-.87.59.59,0,0,1,.43-.24.62.62,0,0,1,.49.16,6.73,6.73,0,0,0,3.85,1.54,4.22,4.22,0,0,0,2.74-.81,1.88,1.88,0,0,0,1-1.58,2.08,2.08,0,0,0-.89-1.61,6.29,6.29,0,0,0-2.86-1l-.05,0a7.63,7.63,0,0,1-3-1,2.63,2.63,0,0,1-1.44-2.38,3.14,3.14,0,0,1,1.44-2.6A5.61,5.61,0,0,1,29,8.2a5.15,5.15,0,0,1,1.58.26,7.32,7.32,0,0,1,1.22.49q.42.23,1.15.69a.69.69,0,0,1,.27.43.65.65,0,0,1-.08.49.59.59,0,0,1-.41.27.65.65,0,0,1-.49-.08q-.68-.46-1-.66a5.72,5.72,0,0,0-1-.43A3.73,3.73,0,0,0,29,9.41a3.83,3.83,0,0,0-2.47.72,2,2,0,0,0-.89,1.5A1.73,1.73,0,0,0,26.39,13a6.59,6.59,0,0,0,2.71.92h.05A9.58,9.58,0,0,1,32.38,15a3,3,0,0,1,1.49,2.61,3.3,3.3,0,0,1-1.48,2.74A5.47,5.47,0,0,1,29,21.47,7.86,7.86,0,0,1,24.14,19.57Z"
+                        />
+                        <path d="M39.58,8.2a.65.65,0,0,1,0,1.3H37.87v9.67a.86.86,0,0,0,.34.7,1,1,0,0,0,.61.27.67.67,0,0,1,.49.22.65.65,0,0,1,.22.46.6.6,0,0,1-.22.45.67.67,0,0,1-.46.2,2.28,2.28,0,0,1-1.67-.65,2.21,2.21,0,0,1-.66-1.65V9.5H34.87q-.43,0-.54-.16a.77.77,0,0,1-.11-.43,1.79,1.79,0,0,1,0-.38q.08-.33.62-.33h1.65V3.27a.62.62,0,0,1,.2-.45.64.64,0,0,1,.46-.2.68.68,0,0,1,.47.2.6.6,0,0,1,.22.45V8.2Z"
+                        />
+                        <path d="M41,14.53a.51.51,0,1,1,0-1h5.77c.34,0,.51.16.51.49a.53.53,0,0,1-.15.39.49.49,0,0,1-.36.15Z" />
+
+                        <path d="M59.63,8.2a.65.65,0,0,1,.65.65v12a.65.65,0,1,1-1.3,0v-2a6.29,6.29,0,0,1-2.18,1.92,6,6,0,0,1-7.25-1.25,6.58,6.58,0,0,1-1.84-4.69,6.58,6.58,0,0,1,1.84-4.69A6,6,0,0,1,56.8,8.9,6.4,6.4,0,0,1,59,10.8v-2a.65.65,0,0,1,.65-.65ZM50.49,18.61a4.74,4.74,0,0,0,7,0A5.32,5.32,0,0,0,59,14.83,5.37,5.37,0,0,0,57.52,11a4.72,4.72,0,0,0-7,0A5.34,5.34,0,0,0,49,14.83,5.29,5.29,0,0,0,50.49,18.61Z"
+                        />
+                        <path d="M64.48,20.93a.61.61,0,0,1-.62.54h-.16a.66.66,0,0,1-.43-.35.11.11,0,0,1,0-.08l0-.05V8.87a.65.65,0,0,1,.65-.65.58.58,0,0,1,.45.19.65.65,0,0,1,.18.46v1.27a5,5,0,0,1,4-1.92,5.37,5.37,0,0,1,4,1.58A5.19,5.19,0,0,1,74,13.61v7.21a.65.65,0,1,1-1.3,0V13.61a4,4,0,0,0-1.19-2.89,4.07,4.07,0,0,0-5.77,0,4.14,4.14,0,0,0-1.25,2.9Z"
+                        />
+                        <path d="M77.13,20.82v-12a.63.63,0,0,1,.19-.46.69.69,0,0,1,.95,0,.63.63,0,0,1,.19.46v12a.61.61,0,0,1-.2.46.67.67,0,0,1-.47.19.65.65,0,0,1-.65-.65Zm0-15.69V4.51a.65.65,0,0,1,.65-.65.67.67,0,0,1,.47.19.61.61,0,0,1,.2.46v.62a.68.68,0,0,1-.2.5.65.65,0,0,1-.47.2.61.61,0,0,1-.46-.2A.71.71,0,0,1,77.13,5.13Z"
+                        />
+                        <path d="M82.71,21.47h-.16A.63.63,0,0,1,82,21V8.85a.58.58,0,0,1,.19-.45.66.66,0,0,1,.89,0,.58.58,0,0,1,.19.45v1.27a5.11,5.11,0,0,1,4.09-1.9A5.21,5.21,0,0,1,90.15,9a5.47,5.47,0,0,1,2,2,5.65,5.65,0,0,1,2-2,5.39,5.39,0,0,1,8.15,4.62v7.23a.6.6,0,0,1-.19.43.63.63,0,0,1-.46.19.58.58,0,0,1-.45-.19.62.62,0,0,1-.18-.43V13.61a4.19,4.19,0,0,0-1.25-2.91,4,4,0,0,0-5.76,0,4,4,0,0,0-1.21,2.9v7.31l0,.05V21a.53.53,0,0,1-.27.31.8.8,0,0,1-.38.12H92l-.22-.11s-.06,0-.12-.11l-.11-.14,0-.07a.17.17,0,0,0,0-.07V13.61a4,4,0,0,0-1.19-2.91,4.09,4.09,0,0,0-5.8,0,4,4,0,0,0-1.19,2.91v7.23a.55.55,0,0,1-.3.51A.37.37,0,0,1,82.71,21.47Z"
+                        />
+                        <path d="M115.54,8.2a.65.65,0,0,1,.65.65v12a.65.65,0,1,1-1.3,0v-2a6.29,6.29,0,0,1-2.18,1.92,6,6,0,0,1-7.25-1.25,6.58,6.58,0,0,1-1.84-4.69,6.58,6.58,0,0,1,1.84-4.69,6,6,0,0,1,7.25-1.25,6.4,6.4,0,0,1,2.18,1.9v-2a.65.65,0,0,1,.65-.65ZM106.4,18.61a4.74,4.74,0,0,0,7,0,5.32,5.32,0,0,0,1.46-3.78A5.37,5.37,0,0,0,113.43,11a4.72,4.72,0,0,0-7,0,5.34,5.34,0,0,0-1.48,3.79A5.29,5.29,0,0,0,106.4,18.61Z"
+                        />
+                        <path d="M123.1,8.2a.65.65,0,0,1,0,1.3h-1.71v9.67a.86.86,0,0,0,.34.7,1,1,0,0,0,.61.27.67.67,0,0,1,.49.22.65.65,0,0,1,.22.46.6.6,0,0,1-.22.45.67.67,0,0,1-.46.2,2.28,2.28,0,0,1-1.67-.65,2.21,2.21,0,0,1-.66-1.65V9.5h-1.65q-.43,0-.54-.16a.77.77,0,0,1-.11-.43,1.79,1.79,0,0,1,0-.38q.08-.33.62-.33H120V3.27a.62.62,0,0,1,.2-.45.64.64,0,0,1,.46-.2.68.68,0,0,1,.47.2.6.6,0,0,1,.22.45V8.2Z"
+                        />
+                        <path d="M139.14,14.37v.11a.54.54,0,0,1-.19.43.68.68,0,0,1-.46.16H127.6a5.27,5.27,0,0,0,1.6,3.63,5,5,0,0,0,6,.81A5,5,0,0,0,137,17.76a.56.56,0,0,1,.87-.22.62.62,0,0,1,.22.92,6.42,6.42,0,0,1-2.29,2.19,6.3,6.3,0,0,1-7.64-1.12,6.48,6.48,0,0,1-1.88-4.69,6.52,6.52,0,0,1,1.88-4.7,6,6,0,0,1,4.5-2A6.1,6.1,0,0,1,137.11,10,6.72,6.72,0,0,1,139.14,14.37ZM136,10.72a5,5,0,0,0-6.53,0,5.34,5.34,0,0,0-1.79,3.1h10.05A5.12,5.12,0,0,0,136,10.72Z"
+                        />
+                    </g>
+                </svg>
+            </div>
+            <div id="demoDocs">
+                <a id="demos" href="https://codepen.io/collection/XdNGNb/">Demos</a>
+                <a id="learn" href="https://just-animate.gitbooks.io/just-animate-2/content/">Learn</a>
             </div>
         </div>
     </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/web-animations/2.2.2/web-animations.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/just-animate/1.1.0/just-animate-all.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/web-animations/2.2.5/web-animations.min.js"></script>
+    <script src="https://unpkg.com/just-animate@2.1.0/dist/just-animate.min.js"></script>
+    <script src="https://unpkg.com/just-animate@2.1.0/dist/just-animate-web.min.js"></script>
+    <script src="https://unpkg.com/just-animate@2.1.0/dist/just-animate-tools.min.js"></script>
     <script>
-        (function() {
+        (function () {
             'use strict';
-            var $select = document.getElementById('animateSelect');
-            var $button = document.getElementById('animateButton');
-            var $greenPixl = document.querySelector('.green.pixl');
+            var t1 = just.timeline()
 
-            var animation;
-            var greenAnimation;
-            var letters = just.splitText('#animateLabel').characters;
-
-            function animateIntro() {
-                just.animate({
-                        targets: letters,
-                        delay: '+=125ms',
-                        mixins: 'zoomInUp',
-                        fill: 'both',
-                        on: {
-                            created: function(ctx) {
-                                ctx.target.style.opacity = 1;
-                            }
-                        }
-                    })
-                    .animate({
-                        targets: [
-                            '#animateSelect',
-                            '#animateButton',
-                            '#actionWrapper a',
-                            '#starWrapper',
-                            '#githubBanner',
-                            '#greenPixlContainer'
-                        ],
-                        delay: '+=175ms',
-                        to: '1s',
-                        mixins: 'fadeIn',
-                        on: {
-                            created: function(ctx) {
-                                ctx.target.style.opacity = 1;
-                            }
-                        }
-                    })
-                    .on({
-                        finish: jumpForJoy
-                    });
-            }
-
-            function animateTitle(mixinName) {
-                if (animation) {
-                    animation.cancel();
+            t1.fromTo(0, 600, {
+                targets: '#A',
+                easing: 'ease-in',
+                web: {
+                    x: [-160, -160],
+                    y: [-240, -10],
+                    rotate: [270, 0],
+                    scale: [.3, .3],
+                    opacity: [0, 1],
+                    transformOrigin: ['center center', 'center bottom']
                 }
-                animation = just.animate({
-                        targets: letters,
-                        delay: '+=125ms',
-                        mixins: mixinName,
-                        fill: 'both'
-                    })
-                    .on('finish', function() {
-                        animation.cancel();
-                    });
-            }
+            })
 
-            function animateGreenPixl() {
-                if (greenAnimation) {
-                    greenAnimation.cancel();
+            t1.fromTo(800, 1400, {
+                targets: '#A',
+                web: {
+                    x: [-160, 0],
+                    y: [-10, 0],
+                    scale: [.4, 1],
+                    transformOrigin: ['center bottom', 'center bottom']
                 }
-                var randomAnimation = just.shuffle([{
-                    targets: '.pixl',
-                    mixins: 'jello'
-                }, {
-                    targets: '.pixl',
-                    to: '2s',
-                    css: {
-                        rotateX: [0, '360deg'],
-                        rotateY: [0, '180deg'],
-                    },
-                    direction: 'alternate',
-                    iterations: 2
-                }, {
-                    targets: $greenPixl,
-                    to: '1.5s',
-                    fill: 'forwards',
-                    easing: 'ease-in-out',
-                    css: [{
-                        transform: 'rotate(0)'
-                    }, {
-                        transform: 'rotate(360deg)'
-                    }]
-                }, {
-                    targets: '.pixl',
-                    to: '6s',
-                    css: [{
-                        offset: 0,
-                        transform: 'none'
-                    }, {
-                        offset: .25,
-                        x: '200px',
-                        rotate: '180deg'
-                    }, {
-                        offset: .75,
-                        x: '-200px',
-                        rotate: '-180deg'
-                    }, {
-                        offset: 1,
-                        transform: 'none'
-                    }]
-                }]);
+            })
 
-                greenAnimation = just
-                    .animate(randomAnimation)
-                    .on('finish', jumpForJoy);
-            }
-
-            function jumpForJoy() {
-                if (greenAnimation) {
-                    greenAnimation.cancel();
+            t1.fromTo(1000, 1400, {
+                targets: '#J',
+                web: {
+                    x: [-20, 0],
+                    opacity: [0, 1],
+                    scale: [.9, 1],
+                    transformOrigin: ['center bottom', 'center bottom']
                 }
-                greenAnimation = just.animate({
-                        targets: '.pixl',
-                        delay: '1500ms',
-                        mixins: 'bounce',
-                        to: 1200
-                    })
-                    .play(Infinity);
-            }
+            })
 
-            function onReanimate() {
-                // spooky!
-                const val = $select.options[$select.selectedIndex].value
-                animateTitle(val);
-            }
+            t1.add({
+                targets: '#words path',
+                from: 900,
+                duration: 200,
+                stagger: 20,
+                web: {
+                    opacity: [0, 1],
+                    scaleY: [.6, 1.05, 1]
+                }
+            })
 
-            $select.addEventListener('change', onReanimate);
-            $button.addEventListener('click', onReanimate);
-            $greenPixl.addEventListener('click', animateGreenPixl);
-
-            animateIntro();
+            t1.play()
+            
+            var t2 = just.timeline()
+            
+            t2.set({
+                targets: ['#demos', '#learn', '#starWrapper', '#githubBanner'],
+                web: {
+                    opacity: 0
+                }
+            })
+            
+            t2.add({
+                targets: ['#demos', '#learn', '#starWrapper', '#githubBanner'],
+                duration: 800,
+                stagger: 150,
+                web: {
+                    opacity: [0, 1],
+                    scale:[.3, 1.1, 1]
+                }
+            })
+            
+            t2.pause()
+            
+            t1.on('finish', function() {
+                t2.play()
+            })
         })();
     </script>
 
-   <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
 
-      ga('create', 'UA-58883918-2', 'auto');
-      ga('send', 'pageview');
+        ga('create', 'UA-58883918-2', 'auto');
+        ga('send', 'pageview');
     </script>
 </body>
 
