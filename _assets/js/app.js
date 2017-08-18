@@ -92,15 +92,7 @@ ready(function() {
   var dropdown = document.querySelectorAll('[data-dropdown]');
   Array.from(dropdown).forEach(function(button) {
     var contentId = button.getAttribute('data-dropdown');
-    var buttonPosition = button.getBoundingClientRect();
     var content = document.getElementById(contentId);
-    content.style.setProperty('top', buttonPosition.top + buttonPosition.height - 3 + 'px');
-    content.style.setProperty('left', buttonPosition.left + 'px');
-    window.addEventListener('resize', function() {
-      buttonPosition = button.getBoundingClientRect();
-      content.style.setProperty('top', buttonPosition.top + buttonPosition.height - 3 + 'px');
-      content.style.setProperty('left', buttonPosition.left + 'px');
-    });
     button.addEventListener('click', function(event) {
       content.classList.toggle('drip-drop--expand');
     });

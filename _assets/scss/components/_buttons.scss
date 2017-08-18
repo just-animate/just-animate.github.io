@@ -44,4 +44,7 @@
   &:hover::after{
     transform: translateX(33rem) rotate(35deg);
   }
+  &__wrap{
+    position: relative;
+  }
 }
