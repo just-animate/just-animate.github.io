@@ -2,8 +2,8 @@
 title: Just Animate - Robust JavaScript animation library
 description: > # this means to ignore newlines until "baseurl:"
   Just animate is a JavaScript animation library that plugs nicely into WAAPI
-baseurl: "" # the subpath of your site, e.g. /blog/
-url: "https://just-animate.github.io" # the base hostname & protocol for your site
+baseurl: "/just-animate-doc" # the subpath of your site, e.g. /blog/
+url: "https://josephrexme.github.io" # the base hostname & protocol for your site
 
 # Build settings
 markdown: kramdown

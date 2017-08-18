@@ -4,10 +4,10 @@
     <title>Just Animate - Robust JavaScript animation library</title>
     <description>Just animate is a JavaScript animation library that plugs nicely into WAAPI
 </description>
-    <link>https://just-animate.github.io/</link>
-    <atom:link href="https://just-animate.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 18 Aug 2017 15:03:46 -0500</pubDate>
-    <lastBuildDate>Fri, 18 Aug 2017 15:03:46 -0500</lastBuildDate>
+    <link>https://josephrexme.github.io/just-animate-doc/</link>
+    <atom:link href="https://josephrexme.github.io/just-animate-doc/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Fri, 18 Aug 2017 15:11:01 -0500</pubDate>
+    <lastBuildDate>Fri, 18 Aug 2017 15:11:01 -0500</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
@@ -28,8 +28,8 @@
 
 </description>
         <pubDate>Thu, 17 Aug 2017 04:54:12 -0500</pubDate>
-        <link>https://just-animate.github.io/getting-started/</link>
-        <guid isPermaLink="true">https://just-animate.github.io/getting-started/</guid>
+        <link>https://josephrexme.github.io/just-animate-doc/getting-started/</link>
+        <guid isPermaLink="true">https://josephrexme.github.io/just-animate-doc/getting-started/</guid>
         
         
         <category>jekyll</category>
