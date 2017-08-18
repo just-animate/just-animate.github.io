@@ -1,0 +1,47 @@
+.button{
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  min-width: 18rem;
+  margin: 0 1rem 1.5rem 0;
+  padding: 1.2rem 1rem;
+  border: solid thin $color-brand-1;
+  border-radius: $inputs-border-radius;
+  font-size: 1.6rem;
+  font-weight: 300;
+  text-align: center;
+  cursor: pointer;
+  overflow: hidden;
+  &--fill{
+    background: $color-brand-2;
+    color: white;
+  }
+  &--dropdown{
+    padding: 1.2rem 2rem 1.2rem 1rem;
+    &:focus{
+      outline: none;
+    }
+    &::before{
+      content: '';
+      position: absolute;
+      top: calc(4.6rem / 2.4);
+      right: 2rem;
+      border: solid .6rem transparent;
+      border-top-color: white;
+    }
+  }
+  &::after{
+    content: '';
+    position: absolute;
+    top: -1rem;
+    left: -18rem;
+    width: 18rem;
+    height: 4.6rem;
+    transform: rotate(35deg);
+    transition: transform .4s cubic-bezier(0.19, 1, 0.22, 1);
+    background: rgba(white, .2);
+  }
+  &:hover::after{
+    transform: translateX(33rem) rotate(35deg);
+  }
+}

@@ -1,0 +1,13 @@
+.header{
+  height: 100vh;
+  background: #222;
+  background-image: radial-gradient(circle at center, lighten(#000, 20%) 30%, #000);
+  color: $color-brand-3;
+  text-align: center;
+  &__callouts{
+    margin-top: 5rem;
+  }
+  .wrap{
+    padding: 18rem 1rem;
+  }
+}

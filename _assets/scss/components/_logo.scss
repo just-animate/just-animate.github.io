@@ -1,0 +1,31 @@
+.logo{
+  position: relative;
+  &--homepage{
+    width: 28rem;
+    height: 20rem;
+    margin: 2rem auto;
+    transform: scale(.7);
+    transform-origin: bottom center;
+    transition: transform .5s ease;
+    @include breakpoint($breakpoint-tablet-landscape){
+      transform: scale(1);
+    }
+  }
+  &__a, &__j, &__words{
+    position: absolute;
+  }
+  &__j{
+    top: 0;
+    left: -24%;
+  }
+  &__a{
+    top: 0;
+    left: 5%;
+  }
+  &__words{
+    bottom: -35%;
+    svg{
+      width: 28rem;
+    }
+  }
+}

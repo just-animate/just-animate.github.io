@@ -1,0 +1,25 @@
+.drip-drop{
+  position: absolute;
+  top: 53.2rem;
+  left: 26.9rem;
+  list-style-type: none;
+  width: 18rem;
+  margin: 0;
+  padding: 0;
+  font-size: 1.5rem;
+  color: white;
+  transform: scaleY(0);
+  transition: transform .4s ease-in-out;
+  transform-origin: top;
+  &--expand{
+    transform: scaleY(1);
+  }
+  a{
+    display: block;
+    padding: 1rem;
+    background: $color-brand-2;
+    border: solid thin $color-brand-1;
+    border-top: 0;
+    color: inherit;
+  }
+}

@@ -1,0 +1,34 @@
+// Breakpoint Variables
+$breakpoint-tablet-portrait: 768px !default;
+$breakpoint-tablet-landscape: 1024px !default;
+$breakpoint-tablet-mini-portrait: 600px !default;
+$breakpoint-tablet-mini-landscape: 800px !default;
+$breakpoint-iphone-portrait: 320px !default;
+$breakpoint-android-landscape: 480px !default;
+$breakpoint-iphone-landscape: 568px !default;
+$breakpoint-laptop: 1170px !default;
+$breakpoint-tablet-wide: 1075px !default;
+
+// Grids
+// -------------------------------
+
+$grid-padding-width: 10px !default;
+$grid-responsive-sm-break: 567px !default;  // smaller than landscape phone
+$grid-responsive-md-break: 767px !default;  // smaller than portrait tablet
+$grid-responsive-lg-break: 1023px !default; // smaller than landscape tablet
+
+
+// App
+$site-width: 700px !default;
+$color-brand-1: #7ac7c4;
+$color-brand-2: darken($color-brand-1, 15%);
+$color-brand-3: #9ba6c0;
+$text-color: #333;
+$color-links: $color-brand-2;
+$inputs-border-radius: 4px;
+// Using System Fonts
+$font--primary: system-ui, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif !default;
+// Using Google Fonts
+$font--secondary: 'Roboto', sans-serif !default;
+$action-buttons: $color-brand-2;
+
