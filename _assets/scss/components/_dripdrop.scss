@@ -23,5 +23,9 @@
     border: solid thin $color-brand-1;
     border-top: 0;
     color: inherit;
+    transition: background .2s ease;
+    &:hover{
+      background: darken($color-brand-2, 5%);
+    }
   }
 }

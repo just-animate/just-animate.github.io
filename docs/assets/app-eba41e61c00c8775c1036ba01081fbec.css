@@ -573,7 +573,10 @@ small {
     background: #48aca8;
     border: solid thin #7ac7c4;
     border-top: 0;
-    color: inherit; }
+    color: inherit;
+    transition: background .2s ease; }
+    .drip-drop a:hover {
+      background: #419a97; }
 
 pre {
   width: 90%;
