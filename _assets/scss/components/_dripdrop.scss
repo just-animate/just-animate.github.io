@@ -7,12 +7,14 @@
   margin: 0;
   padding: 0;
   font-size: 1.5rem;
-  color: white;
+  color: rgba(white, .2);
   transform: scaleY(0);
   transition: transform .4s ease-in-out;
+  transition-timing-function: cubic-bezier(.68,-0.12,0,1.18);
   transform-origin: top;
   &--expand{
     transform: scaleY(1);
+    color: rgba(white, 1);
   }
   a{
     display: block;

@@ -559,12 +559,14 @@ small {
   margin: 0;
   padding: 0;
   font-size: 1.5rem;
-  color: white;
+  color: rgba(255, 255, 255, 0.2);
   transform: scaleY(0);
   transition: transform .4s ease-in-out;
+  transition-timing-function: cubic-bezier(0.68, -0.12, 0, 1.18);
   transform-origin: top; }
   .drip-drop--expand {
-    transform: scaleY(1); }
+    transform: scaleY(1);
+    color: white; }
   .drip-drop a {
     display: block;
     padding: 1rem;
