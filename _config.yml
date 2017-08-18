@@ -16,6 +16,7 @@ assets:
     - _assets/js
     - _assets/scss
   cache: true
+  cdn: https://josephrexme.github.io/just-animate-doc
 
 timezone: America/Chicago
 incremental: true
