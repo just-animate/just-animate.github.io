@@ -37,10 +37,11 @@
       border-radius: .8rem;
     }
     &::after{
-      top: -.2rem;
+      top: -.28rem;
       width: 1rem;
       height: 1rem;
       border-radius: 50%;
+      box-shadow: 0 .2rem .2rem rgba(black, .25);
     }
     &:first-of-type{
       &::before{
@@ -100,7 +101,7 @@
   position: relative;
   width: 6rem;
   height: 5.5rem;
-  margin: .5rem auto;
+  margin: .42rem auto;
   border-radius: .2rem;
   background: $color-brand-2;
   color: white;
