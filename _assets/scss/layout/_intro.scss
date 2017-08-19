@@ -3,4 +3,151 @@
   &__illustrations{
     margin: 5rem 0;
   }
+  &__icon{
+    padding-top: .5rem;
+    svg{
+      width: 6rem;
+      height: 6rem;
+      vertical-align: bottom;
+      will-change: transform;
+      perspective: 1000px;
+    }
+  }
+}
+.timeline-control{
+  margin-top: 2.5rem;
+  div{
+    position: relative;
+    width: 5rem;
+    height: .5rem;
+    margin: 1rem auto 0;
+    border-radius: .8rem;
+    background: #ddd;
+    &::before, &::after{
+      content: '';
+      position: absolute;
+      left: 0;
+      background: $color-brand-2;
+      transform-origin: left;
+    }
+    &::before{
+      top: 0;
+      width: 5rem;
+      height: .5rem;
+      border-radius: .8rem;
+    }
+    &::after{
+      top: -.2rem;
+      width: 1rem;
+      height: 1rem;
+      border-radius: 50%;
+    }
+    &:first-of-type{
+      &::before{
+        transform: scaleX(.5);
+      }
+      &::after{
+        transform: translate(2.4rem);
+      }
+    }
+    &:last-of-type{
+      &::before{
+        transform: scaleX(.8);
+      }
+      &::after{
+        transform: translate(3.7rem);
+      }
+    }
+    &:nth-of-type(2){
+      &::before{
+        transform: scaleX(.2);
+      }
+      &::after{
+        transform: translate(0.7rem);
+      }
+    }
+  }
+}
+
+.staggers{
+  margin-top: 4rem;
+  div{
+    position: relative;
+    width: 3.5rem;
+    height: 1rem;
+    margin: 2.5rem auto;
+    background: $color-brand-2;
+    border-radius: .2rem;
+    &::after, &::before{
+      content: '';
+      position: absolute;
+      width: 3.5rem;
+      height: 1rem;
+      background: $color-brand-2;
+      border-radius: .2rem;
+    }
+    &::before{
+      top: -1.5rem;
+    }
+    &::after{
+      top: 1.5rem;
+      left: -1.5rem;
+    }
+  }
+}
+
+.waapi{
+  position: relative;
+  width: 6rem;
+  height: 5.5rem;
+  margin: .5rem auto;
+  border-radius: .2rem;
+  background: $color-brand-2;
+  color: white;
+  font-size: 1.3rem;
+  span{
+    position: absolute;
+    bottom: 0;
+    right: .5rem;
+  }
+}
+
+.tween-player{
+  margin-top: 1.2rem;
+  div{
+    position: relative;
+    width: 6rem;
+    margin: .7rem auto;
+    &::after{
+      content: '';
+      position: absolute;
+    }
+    &:first-of-type{
+      height: 4rem;
+      border: solid .2rem $color-brand-2;
+      &::after{
+        top: .8rem;
+        left: 2rem;
+        border: solid transparent;
+        border-width: 1rem 2rem 1rem 2rem;
+        border-left-color: $color-brand-2;
+      }
+    }
+    &:last-of-type{
+      border-bottom: solid .2rem $color-brand-2;
+      &::after{
+        top: -.24rem;
+        left: 1rem;
+        width: .6rem;
+        height: .6rem;
+        border-radius: 50%;
+        background: $color-brand-2;
+      }
+    }
+  }
+}
+
+// Fill SVGs used in intro illustrations
+#feather path, #yoyorepeat path{
+  fill: $color-brand-2;
 }
