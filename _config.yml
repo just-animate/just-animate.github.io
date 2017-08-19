@@ -9,12 +9,18 @@ url: "https://josephrexme.github.io" # the base hostname & protocol for your sit
 markdown: kramdown
 
 assets:
+  js_compressor: uglifier
+  css_compressor: sass
   sources:
     - _assets/img
     - _assets/js
     - _assets/scss
   cache: true
   cdn: https://josephrexme.github.io/
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - package.json
 
 timezone: America/Chicago
 incremental: true

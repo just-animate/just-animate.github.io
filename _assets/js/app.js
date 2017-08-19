@@ -66,14 +66,14 @@ ready(function() {
   var t2 = just.timeline();
 
   t2.set({
-    targets: '.header__callouts .button',
+    targets: ['.header__callouts .button', '#slogan'],
     web: {
       opacity: 0
     }
   });
 
   t2.add({
-    targets: '.header__callouts .button',
+    targets: ['.header__callouts .button', '#slogan'],
     duration: 800,
     stagger: 150,
     web: {
@@ -92,8 +92,12 @@ ready(function() {
   var dropdown = document.querySelectorAll('[data-dropdown]');
   Array.from(dropdown).forEach(function(button) {
     var contentId = button.getAttribute('data-dropdown');
-    var content = document.getElementById(contentId);
-    button.addEventListener('click', function(event) {
+    button.addEventListener('click', function(e) {
+      var content = document.getElementById(contentId);
+      var thisBtnExpand = e.target.getAttribute('aria-expanded');
+      var contentHidden = content.getAttribute('aria-hidden');
+      button.setAttribute('aria-expanded', thisBtnExpand == 'true' ? 'false' : 'true');
+      content.setAttribute('aria-hidden', contentHidden == 'true' ? 'false' : 'true');
       content.classList.toggle('drip-drop--expand');
     });
   });
