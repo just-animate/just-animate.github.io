@@ -148,6 +148,15 @@
   }
 }
 
+// Animating the icons
+.ytriggered{
+  transition: transform .8s ease-out;
+  transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.yuntriggered{
+  transform: scale(.6);
+}
+
 // Fill SVGs used in intro illustrations
 #feather path, #yoyorepeat path{
   fill: $color-brand-2;

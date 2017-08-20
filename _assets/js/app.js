@@ -11,6 +11,77 @@ var ready = function(cb) {
   : cb();
 };
 
+var $ = document.querySelectorAll.bind(document);
+var on = window.addEventListener;
+var off = window.removeEventListener;
+
+var yscroll = function(options, selector) {
+  var defaults = {
+    reverse: true,
+    inViewClass: 'ytriggered',
+    offViewClass: 'yuntriggered',
+    offset: 0,
+    ignoreTransform: true
+  };
+  var config = Object.assign({}, defaults, options);
+  var scrollTop = 0;
+  var timeout = undefined;
+  var lastScroll = undefined;
+  var rects = [];
+
+  var index = function() {
+    var els = $(selector);
+    return rects = Array.from(els).map(function(el) {
+      var thisEl = el;
+      var rect = {};
+      if(config.ignoreTransform){
+        var offsetTop = 0,
+        offsetLeft = 0;
+        var offsetHeight = el.offsetHeight;
+        while(el){
+          offsetTop += el.offsetTop;
+          el =  el.offsetParent;
+        }
+        rect.top = offsetTop;
+        rect.bottom = offsetTop + offsetHeight;
+      }else{
+        rect = el.getBoundingClientRect();
+      }
+      rect.el = thisEl;
+      return rect;
+    });
+  };
+
+  var update = function() {
+    var height = window.innerHeight;
+    rects.forEach(function(rect) {
+      var reveal = rect.bottom > scrollTop && rect.top < (scrollTop + height) - (height * config.offset);
+      if(rect.reveal !== reveal){
+        rect.el.classList.toggle(config.inViewClass, reveal);
+        rect.el.classList.toggle(config.offViewClass, !reveal);
+      }
+      rect.reveal = reveal;
+    });
+  };
+
+  var check = function() {
+    if(rects.length && lastScroll !== scrollTop){
+      update();
+    }
+  };
+
+  var onScroll = function() {
+    scrollTop = window.pageYOffset;
+    check();
+  };
+
+  index();
+  check();
+  on('scroll', index);
+  on('scroll', onScroll);
+  on('resize', onScroll);
+};
+
 ready(function() {
   'use strict';
 
@@ -89,7 +160,7 @@ ready(function() {
   });
 
   // Dropdown button
-  var dropdown = document.querySelectorAll('[data-dropdown]');
+  var dropdown = $('[data-dropdown]');
   Array.from(dropdown).forEach(function(button) {
     var contentId = button.getAttribute('data-dropdown');
     button.addEventListener('click', function(e) {
@@ -101,4 +172,6 @@ ready(function() {
       content.classList.toggle('drip-drop--expand');
     });
   });
+
+  yscroll({}, '.intro__icon');
 });
