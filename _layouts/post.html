@@ -1,14 +1,24 @@
 ---
 layout: default
 ---
-<div class="post">
+<div class="page">
 
-  <header class="post-header">
-    <h1 class="post-title">{{ page.title }}</h1>
-    <p class="post-meta">{{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</p>
+  <header class="page__header">
+    <div class="logo logo--pages">
+      <div class="logo__j">
+        <svg><use xlink:href="#logo-j"></use></svg>
+      </div>
+      <div class="logo__a">
+        <svg><use xlink:href="#logo-a"></use></svg>
+      </div>
+      <div class="logo__words">
+        <svg><use xlink:href="#logo-words"></use></svg>
+      </div>
+    </div>
   </header>
 
-  <article class="post-content">
+  {% include navigation.html %}
+  <article class="page__content">
     {{ content }}
   </article>
 

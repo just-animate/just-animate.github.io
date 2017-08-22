@@ -1,0 +1,19 @@
+.nav{
+  padding: 1rem 0;
+  &__links{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    li{
+      margin-bottom: 1rem;
+    }
+    a{
+      display: block;
+      padding: .4rem 0;
+      color: inherit;
+      &:hover{
+        color: $color-links;
+      }
+    }
+  }
+}

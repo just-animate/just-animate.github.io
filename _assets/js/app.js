@@ -15,7 +15,7 @@ var $ = document.querySelectorAll.bind(document);
 var on = window.addEventListener;
 var off = window.removeEventListener;
 
-var yscroll = function(options, selector) {
+var yreveal = function(options, selector) {
   var defaults = {
     reverse: true,
     inViewClass: 'ytriggered',
@@ -77,8 +77,8 @@ var yscroll = function(options, selector) {
 
   index();
   check();
-  on('scroll', index);
   on('scroll', onScroll);
+  on('resize', index);
   on('resize', onScroll);
 };
 
@@ -173,5 +173,5 @@ ready(function() {
     });
   });
 
-  yscroll({}, '.intro__icon');
+  yreveal({ reverse: false }, '.intro__icon');
 });

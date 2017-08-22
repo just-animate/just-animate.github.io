@@ -1,0 +1,14 @@
+.page{
+  padding: 1rem 3rem;
+  @include breakpoint($breakpoint-tablet-portrait){
+    padding: 1rem 6rem;
+  }
+  &__header{
+    height: 15rem;
+    padding: 3.5rem 0;
+    color: #333;
+    a{
+      color: inherit;
+    }
+  }
+}
