@@ -1,5 +1,17 @@
 .nav{
-  padding: 1rem 0;
+  position: absolute;
+  left: 0;
+  width: 300px;
+  padding: 1rem 2rem 0;
+  font-size: 1.6rem;
+  background: white;
+  box-shadow: 0 0 2px rgba(black, .4);
+  @include breakpoint($breakpoint-tablet-portrait){
+    width: 200px;
+  }
+  &__group{
+    margin-bottom: 2rem;
+  }
   &__links{
     list-style-type: none;
     margin: 0;

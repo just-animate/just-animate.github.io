@@ -1,4 +1,5 @@
 .page{
+  position: relative;
   padding: 1rem 3rem;
   @include breakpoint($breakpoint-tablet-portrait){
     padding: 1rem 6rem;
@@ -9,6 +10,11 @@
     color: #333;
     a{
       color: inherit;
+    }
+  }
+  &__content{
+    @include breakpoint($breakpoint-tablet-portrait){
+      margin-left: 200px;
     }
   }
 }

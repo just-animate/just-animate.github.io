@@ -2,7 +2,7 @@
 layout: page
 title:  "Introduction"
 date:   2017-08-17 09:54:12
-permalink: /getting-started/
+permalink: /introduction/
 ---
 
 # Introduction
