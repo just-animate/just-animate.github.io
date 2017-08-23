@@ -4,10 +4,10 @@
     <title>Just Animate - Robust JavaScript animation library</title>
     <description>Just animate is a JavaScript animation library that plugs nicely into WAAPI
 </description>
-    <link>https://josephrexme.github.io/just-animate-doc/</link>
-    <atom:link href="https://josephrexme.github.io/just-animate-doc/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 23 Aug 2017 04:04:52 -0500</pubDate>
-    <lastBuildDate>Wed, 23 Aug 2017 04:04:52 -0500</lastBuildDate>
+    <link>https://just-animate.github.io/</link>
+    <atom:link href="https://just-animate.github.io/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Wed, 23 Aug 2017 05:28:43 -0500</pubDate>
+    <lastBuildDate>Wed, 23 Aug 2017 05:28:43 -0500</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
@@ -83,8 +83,8 @@
 &lt;p&gt;Just Animate supports whatever properties are also animatable by CSS in that browser.  If a property does not have support, the Web Animations API uses a fallback strategy of switching values midway between keyframes.&lt;/p&gt;
 </description>
         <pubDate>Wed, 23 Aug 2017 00:00:00 -0500</pubDate>
-        <link>https://josephrexme.github.io/just-animate-doc/waapi/</link>
-        <guid isPermaLink="true">https://josephrexme.github.io/just-animate-doc/waapi/</guid>
+        <link>https://just-animate.github.io/waapi/</link>
+        <guid isPermaLink="true">https://just-animate.github.io/waapi/</guid>
         
         
       </item>
@@ -184,8 +184,8 @@
 &lt;p&gt;In this example, the delay property is resolved for each target.  For #first, index is 0 because it was the first target.  To equal the stagger above, we added 1 to it and then multiplied it by the number of milliseconds we wanted to add to that target&amp;#39;s delay.&lt;/p&gt;
 </description>
         <pubDate>Wed, 23 Aug 2017 00:00:00 -0500</pubDate>
-        <link>https://josephrexme.github.io/just-animate-doc/delays-and-staggers/</link>
-        <guid isPermaLink="true">https://josephrexme.github.io/just-animate-doc/delays-and-staggers/</guid>
+        <link>https://just-animate.github.io/delays-and-staggers/</link>
+        <guid isPermaLink="true">https://just-animate.github.io/delays-and-staggers/</guid>
         
         
       </item>
@@ -268,8 +268,8 @@ import { shuffle, splitText, random } from &amp;#39;just-animate/extras&amp;#39;
 &lt;p&gt;&lt;img src=&quot;/assets/player-controls.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
 </description>
         <pubDate>Wed, 23 Aug 2017 00:00:00 -0500</pubDate>
-        <link>https://josephrexme.github.io/just-animate-doc/setup-npm/</link>
-        <guid isPermaLink="true">https://josephrexme.github.io/just-animate-doc/setup-npm/</guid>
+        <link>https://just-animate.github.io/setup-npm/</link>
+        <guid isPermaLink="true">https://just-animate.github.io/setup-npm/</guid>
         
         
       </item>
@@ -341,8 +341,8 @@ import { shuffle, splitText, random } from &amp;#39;just-animate/extras&amp;#39;
 &lt;span class=&quot;nx&quot;&gt;just&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;tools&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;player&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;t1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
         <pubDate>Wed, 23 Aug 2017 00:00:00 -0500</pubDate>
-        <link>https://josephrexme.github.io/just-animate-doc/setup-cdn/</link>
-        <guid isPermaLink="true">https://josephrexme.github.io/just-animate-doc/setup-cdn/</guid>
+        <link>https://just-animate.github.io/setup-cdn/</link>
+        <guid isPermaLink="true">https://just-animate.github.io/setup-cdn/</guid>
         
         
       </item>
@@ -382,8 +382,8 @@ import { shuffle, splitText, random } from &amp;#39;just-animate/extras&amp;#39;
 &lt;/blockquote&gt;
 </description>
         <pubDate>Wed, 23 Aug 2017 00:00:00 -0500</pubDate>
-        <link>https://josephrexme.github.io/just-animate-doc/sequences/</link>
-        <guid isPermaLink="true">https://josephrexme.github.io/just-animate-doc/sequences/</guid>
+        <link>https://just-animate.github.io/sequences/</link>
+        <guid isPermaLink="true">https://just-animate.github.io/sequences/</guid>
         
         
       </item>
@@ -518,8 +518,8 @@ import { shuffle, splitText, random } from &amp;#39;just-animate/extras&amp;#39;
 &lt;p&gt;In this example, we have provided a configuration object for opacity.  Opacity has a specific easing of ease-in, and has a custom interpolator.  The value property can be any of the other four other types of property values.&lt;/p&gt;
 </description>
         <pubDate>Wed, 23 Aug 2017 00:00:00 -0500</pubDate>
-        <link>https://josephrexme.github.io/just-animate-doc/property-options/</link>
-        <guid isPermaLink="true">https://josephrexme.github.io/just-animate-doc/property-options/</guid>
+        <link>https://just-animate.github.io/property-options/</link>
+        <guid isPermaLink="true">https://just-animate.github.io/property-options/</guid>
         
         
       </item>
@@ -589,8 +589,8 @@ import { shuffle, splitText, random } from &amp;#39;just-animate/extras&amp;#39;
 &lt;p&gt;One important thing to notice is that the &lt;code&gt;interpolateViewBox&lt;/code&gt; function is does parsing before returning the interpolator function.  Both the &lt;code&gt;interpolateViewBox&lt;/code&gt; function and the interpolator it returns are cached, so it is important that both of these functions are pure, as they will not be called more than once for every combination of parameters (left, right, or offset).&lt;/p&gt;
 </description>
         <pubDate>Wed, 23 Aug 2017 00:00:00 -0500</pubDate>
-        <link>https://josephrexme.github.io/just-animate-doc/prop-interpolation/</link>
-        <guid isPermaLink="true">https://josephrexme.github.io/just-animate-doc/prop-interpolation/</guid>
+        <link>https://just-animate.github.io/prop-interpolation/</link>
+        <guid isPermaLink="true">https://just-animate.github.io/prop-interpolation/</guid>
         
         
       </item>
@@ -659,8 +659,8 @@ import { shuffle, splitText, random } from &amp;#39;just-animate/extras&amp;#39;
 &lt;p&gt;&lt;img src=&quot;/assets/random.gif&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
 </description>
         <pubDate>Wed, 23 Aug 2017 00:00:00 -0500</pubDate>
-        <link>https://josephrexme.github.io/just-animate-doc/extras/</link>
-        <guid isPermaLink="true">https://josephrexme.github.io/just-animate-doc/extras/</guid>
+        <link>https://just-animate.github.io/extras/</link>
+        <guid isPermaLink="true">https://just-animate.github.io/extras/</guid>
         
         
       </item>
@@ -698,8 +698,8 @@ import { shuffle, splitText, random } from &amp;#39;just-animate/extras&amp;#39;
 &lt;p&gt;For more CSS curves, check out &lt;a href=&quot;https://github.com/just-animate/just-curves#curves-made-for-in-css&quot;&gt;Just Curves&lt;/a&gt; or go to &lt;a href=&quot;http://cubic-bezier.com/&quot;&gt;cubic-bezier.com&lt;/a&gt; to design your own.&lt;/p&gt;
 </description>
         <pubDate>Wed, 23 Aug 2017 00:00:00 -0500</pubDate>
-        <link>https://josephrexme.github.io/just-animate-doc/easings/</link>
-        <guid isPermaLink="true">https://josephrexme.github.io/just-animate-doc/easings/</guid>
+        <link>https://just-animate.github.io/easings/</link>
+        <guid isPermaLink="true">https://just-animate.github.io/easings/</guid>
         
         
       </item>
@@ -759,8 +759,8 @@ import { shuffle, splitText, random } from &amp;#39;just-animate/extras&amp;#39;
 &lt;p&gt;The resulting background would be a linear gradient from left to right with one side shifting through all colors, and the other side being black.  Before CSS Variables, this would have been difficult to do.  Using Just Animate, it is now even easier.&lt;/p&gt;
 </description>
         <pubDate>Wed, 23 Aug 2017 00:00:00 -0500</pubDate>
-        <link>https://josephrexme.github.io/just-animate-doc/css-vars/</link>
-        <guid isPermaLink="true">https://josephrexme.github.io/just-animate-doc/css-vars/</guid>
+        <link>https://just-animate.github.io/css-vars/</link>
+        <guid isPermaLink="true">https://just-animate.github.io/css-vars/</guid>
         
         
       </item>

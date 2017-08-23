@@ -62,6 +62,9 @@ var yreveal = function(options, selector) {
       }
       rect.reveal = reveal;
     });
+    if(!config.reverse){
+      rects = rects.filter(function(rect) { return !rect.reveal });
+    }
   };
 
   var check = function() {
