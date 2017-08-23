@@ -1,20 +1,30 @@
 .page{
   position: relative;
   padding: 1rem 3rem;
+  word-wrap: break-word;
   @include breakpoint($breakpoint-tablet-portrait){
     padding: 1rem 6rem;
   }
   &__header{
+    display: flex;
     height: 15rem;
+    justify-content: center;
     padding: 3.5rem 0;
     color: #333;
     a{
       color: inherit;
     }
+    @include breakpoint($breakpoint-tablet-portrait){
+      display: block;
+    }
   }
   &__content{
+    transition: transform .5s cubic-bezier(.68,-0.12,0,1.18);
     @include breakpoint($breakpoint-tablet-portrait){
       margin-left: 200px;
+    }
+    .page--navopen &{
+      transform: translateX(25rem);
     }
   }
 }

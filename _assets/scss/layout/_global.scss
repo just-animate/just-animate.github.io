@@ -10,10 +10,18 @@ html{
 body{
   font: 400 1.8rem/1.3 $font--primary;
   color: $text-color;
+  overflow-x: hidden;
 }
 a{
   color: $color-links;
   text-decoration: none;
+}
+blockquote{
+  margin: 2rem 1rem 0;
+  padding: .5rem 2rem;
+  border-left: solid thick #ddd;
+  background: #fefefe;
+  color: #555;
 }
 .wrap{
   width: 100%;

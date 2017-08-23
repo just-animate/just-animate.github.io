@@ -1,5 +1,6 @@
 .logo{
   position: relative;
+  display: inline-block;
   &--homepage{
     width: 28rem;
     height: 20rem;
@@ -16,8 +17,12 @@
     @extend .logo--homepage;
     margin: 0;
     transform: scale(.4);
-    transform-origin: top left;
+    transform-origin: top center;
+    transition: none;
     color: black;
+    @include breakpoint($breakpoint-tablet-portrait){
+      transform-origin: top left;
+    }
   }
   &__a, &__j, &__words{
     position: absolute;

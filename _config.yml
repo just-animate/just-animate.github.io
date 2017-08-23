@@ -6,7 +6,7 @@ baseurl: "/just-animate-doc" # /just-animate-doc For temporary push to my fork
 url: "https://josephrexme.github.io" # the base hostname & protocol for your site
 
 # Build settings
-markdown: kramdown
+markdown: redcarpet
 
 assets:
   js_compressor: uglifier
