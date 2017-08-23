@@ -4,7 +4,7 @@
   "description": "Just animate docs website",
   "main": "_config.yml",
   "scripts": {
-    "build": "bundle exec jekyll build --destination docs",
+    "build": "rake publish",
     "start": "bundle exec jekyll serve"
   },
   "repository": {
