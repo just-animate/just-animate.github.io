@@ -187,9 +187,10 @@ ready(function() {
     // Trigger menu on small viewports
     var navMenu = $('.nav');
     var page = $('.page');
-    console.log(navMenu[0], page[0], 'HeeHa');
     navMenu[0].addEventListener('click', function() {
-      page[0].classList.toggle('page--navopen');
+      if (window.matchMedia("(max-width: 768px)").matches) {
+        page[0].classList.toggle('page--navopen');
+      }
     });
 
   }

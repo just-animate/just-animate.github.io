@@ -47,6 +47,8 @@
     }
     a{
       display: block;
+      position: relative;
+      z-index: 10;
       padding: .4rem 0;
       color: inherit;
       &:hover{
