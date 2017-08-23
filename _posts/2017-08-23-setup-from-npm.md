@@ -75,5 +75,5 @@ player(t1)
 
 The player controls should look something like this
 
-![](/assets/player-controls.png)
+![](/player-controls.png)
 

@@ -6,8 +6,8 @@
 </description>
     <link>https://just-animate.github.io/</link>
     <atom:link href="https://just-animate.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 23 Aug 2017 05:28:43 -0500</pubDate>
-    <lastBuildDate>Wed, 23 Aug 2017 05:28:43 -0500</lastBuildDate>
+    <pubDate>Wed, 23 Aug 2017 05:52:05 -0500</pubDate>
+    <lastBuildDate>Wed, 23 Aug 2017 05:52:05 -0500</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
@@ -265,7 +265,7 @@ import { shuffle, splitText, random } from &amp;#39;just-animate/extras&amp;#39;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;The player controls should look something like this&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/player-controls.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/player-controls.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
 </description>
         <pubDate>Wed, 23 Aug 2017 00:00:00 -0500</pubDate>
         <link>https://just-animate.github.io/setup-npm/</link>
