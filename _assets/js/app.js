@@ -170,8 +170,9 @@ ready(function() {
   if(dropdown.length) { // Homepage
     Array.from(dropdown).forEach(function(button) {
       var contentId = button.getAttribute('data-dropdown');
+      var content = document.getElementById(contentId);
+      content.style.setProperty('display', content.style.display ? null : 'block');
       button.addEventListener('click', function(e) {
-        var content = document.getElementById(contentId);
         var thisBtnExpand = e.target.getAttribute('aria-expanded');
         var contentHidden = content.getAttribute('aria-hidden');
         button.setAttribute('aria-expanded', thisBtnExpand == 'true' ? 'false' : 'true');
