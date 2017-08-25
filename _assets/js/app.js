@@ -171,8 +171,10 @@
       // Homepage
       dropdowns.forEach(function (button) {
         var contentId = button.getAttribute('data-dropdown')
-        button.addEventListener('click', function (e) {
-          var content = document.getElementById(contentId)
+        var content = document.getElementById(contentId);
+        content.style.setProperty('display', content.style.display ? null : 'block');
+        
+        button.addEventListener('click', function (e) { 
           var thisBtnExpand = e.target.getAttribute('aria-expanded')
           var contentHidden = content.getAttribute('aria-hidden')
           button.setAttribute('aria-expanded', thisBtnExpand == 'true' ? 'false' : 'true')
@@ -212,7 +214,7 @@
   var downloadFile = function (url) {
     var fileName = url.substr(url.lastIndexOf('/') + 1);
     
-    lazyLoad('https://unpkg.com/file-saver@1.3.3', function () {
+    lazyLoad('https://unpkg.com/file-saver@1.3.3/FileSaver.min.js', function () {
       var xhr = new XMLHttpRequest();
       xhr.open('GET', url, true);
       xhr.onload = function (resp) { 
