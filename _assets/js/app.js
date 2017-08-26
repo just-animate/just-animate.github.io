@@ -10,7 +10,7 @@
 
   var on = window.addEventListener
   var off = window.removeEventListener
-  
+
   var ready = function (cb) {
     if (/in/.test(document.readyState)) {
       setTimeout(function () {
@@ -173,8 +173,8 @@
         var contentId = button.getAttribute('data-dropdown')
         var content = document.getElementById(contentId);
         content.style.setProperty('display', content.style.display ? null : 'block');
-        
-        button.addEventListener('click', function (e) { 
+
+        button.addEventListener('click', function (e) {
           var thisBtnExpand = e.target.getAttribute('aria-expanded')
           var contentHidden = content.getAttribute('aria-hidden')
           button.setAttribute('aria-expanded', thisBtnExpand == 'true' ? 'false' : 'true')
@@ -197,37 +197,37 @@
       })
     }
   }
-  
+
   var lazyLoad = function (url, success) {
     if (document.querySelector('script[src="' + url + '"]')) {
       success();
       return;
     }
-    
+
     // add script and use callback when file saver is done loading
     var loader = document.createElement('script');
     loader.src = url;
     loader.onload = success;
     document.head.appendChild(loader);
   }
-  
+
   var downloadFile = function (url) {
     var fileName = url.substr(url.lastIndexOf('/') + 1);
-    
+
     lazyLoad('https://unpkg.com/file-saver@1.3.3/FileSaver.min.js', function () {
       var xhr = new XMLHttpRequest();
       xhr.open('GET', url, true);
-      xhr.onload = function (resp) { 
+      xhr.onload = function (resp) {
         var contents = new Blob([xhr.responseText], { type: "text/plain;charset=utf-8" })
-        saveAs(contents, fileName); 
-      } 
+        saveAs(contents, fileName);
+      }
       xhr.onerror = function (err) {
         console.log(err);
       };
       xhr.send();
     })
   };
-  
+
   var initDownloads = function () {
     $('[data-download]').forEach(function (el) {
       el.addEventListener('click', function (evt) {
