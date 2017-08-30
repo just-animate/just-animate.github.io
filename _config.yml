@@ -8,6 +8,11 @@ url: "https://just-animate.github.io" # the base hostname & protocol for your si
 # Build settings
 markdown: redcarpet
 
+redcarpet:
+  extensions:
+    - autolink
+    - tables
+
 assets:
   js_compressor: uglifier
   css_compressor: sass
