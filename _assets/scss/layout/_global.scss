@@ -26,6 +26,26 @@ blockquote{
   background: #fefefe;
   color: #555;
 }
+table{
+  display: block;
+  width: 100%;
+  margin: 1rem 0 1.5rem;
+  overflow: auto;
+  font-size: 1.6rem;
+}
+thead, tbody{
+  width: 100%;
+}
+tr{
+  border-top: solid thin #ccd;
+  &:nth-child(2n){
+    background-color: #f6f8f9;
+  }
+}
+td,th{
+  padding: 1rem 2rem;
+  border: solid thin #dee;
+}
 .wrap{
   width: 100%;
   max-width: $site-width;
