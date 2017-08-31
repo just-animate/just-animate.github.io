@@ -235,11 +235,39 @@
         downloadFile(el.getAttribute('href'));
       });
     });
-  }
+  };
+  
+  var getPath = function () {
+    var path = location.pathname;
+    var lastSlash = path.lastIndexOf('/');
+    return lastSlash < 1 ? path : path.substring(0, lastSlash - 1);
+  };
+  
+  var createStyleSheet = function (rules) {
+    var el = document.createElement('style');
+    el.textContent = rules;
+    document.head.appendChild(el);
+  };
+  
+  var initDynamicStyles = function () {
+    var path = getPath();        
+    var sheet = createStyleSheet([
+      '.nav__links a[href^="' + path + '"] { ', 
+        'left: -4px;',
+      '}',
+      '.nav__links a[href^="' + path + '"]::before { ',
+        'border-left: solid #48aca8 4px;',
+        'content: "";',
+        'left: -5px;',
+        'position: relative;',
+      '}'
+    ].join('\n'));
+  };
 
   ready(function () {
     animateIntro();
     initDropdowns();
     initDownloads();
+    initDynamicStyles();
   })
 })();

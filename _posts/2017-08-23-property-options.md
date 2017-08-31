@@ -117,7 +117,7 @@ In this example, the mid value was replaced with a function that returns a keyfr
 ### Property Value Configuration (Interpolation/Property Easing)
 > This is not supported with the ```web``` property as there is currently no way to do this on the Web Animations API.  There is a feature proposed in the level 2 spec that may allow this in the future.
 
-The fifth way to use properties is to define a configuration object.  This is useful for assigning an easing to a particular property or defining a custom interpolator. [See Property Interpolation](/getting-started/prop-interpolation.md)
+The fifth way to use properties is to define a configuration object.  This is useful for assigning an easing to a particular property or defining a custom interpolator. [See Property Interpolation](/prop-interpolation)
 
 ```js
 var timeline = just.animate({

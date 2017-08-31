@@ -1,4 +1,4 @@
-pre{
+pre {
   margin: 2rem 0;
   padding: 1.5rem 2rem;
   background: #f8f8f8;
@@ -9,4 +9,10 @@ pre{
     max-width: 50rem;
     margin: 2rem auto;
   }
+}
+
+:not(pre) > code {
+  // targetted styles for non-code snippets
+  padding: .2rem .35rem 0 .35rem; 
+  font-weight: bold;
 }
