@@ -51,6 +51,7 @@ addPlugin(waapiPlugin)
 By installing just-animate through NPM, you already have the extras package.  Simply import it:
 
 - Include the following script in the head of your html page after the core script
+
 ```js
 import { shuffle, splitText, random } from 'just-animate/extras'
 ```

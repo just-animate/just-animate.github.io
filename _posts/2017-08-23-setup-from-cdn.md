@@ -14,8 +14,15 @@ Just Animate is available [here on CDNJS](https://cdnjs.com/libraries/just-anima
 
 ### Installing Just Animate
 - Include the following script in the head of your html page:
+
 ```html
 <script src="just-animate.min.js"></script>
+```
+
+OR
+
+```html
+<script src="just-animate-all.min.js"></script>
 ```
 
 - Use ```just``` to start animating!
@@ -32,6 +39,7 @@ timeline.play()
 > The Web Animations API animates DOM elements from JavaScript.  It has similar capabilities to CSS Animations and is supported natively in FireFox and Chrome.
 
 - Include the following script in the head of your html page after the core script
+
 ```html
 <script src="just-animate-web.min.js"></script>
 ```
@@ -47,6 +55,7 @@ timeline.play()
 > The extra package provide helpful addons that are related to animation such as splitting an element's text into separate elements
 
 - Include the following script in the head of your html page after the core script
+
 ```html
 <script src="just-animate-extras.min.js"></script>
 ```
@@ -55,6 +64,7 @@ timeline.play()
 > The tools package provides tools for debugging animations.  At the moment, it has a simple scrubber with play, pause, and reverse
 
 - Include the following script in the head of your html page after the core script
+
 ```html
 <script src="just-animate-extras.min.js"></script>
 ```

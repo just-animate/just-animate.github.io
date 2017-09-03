@@ -37,3 +37,13 @@ timeline.play()
 The ```sequence()``` function also returns a Timeline, so it can be added to and controlled like any other Timeline.
 
 > sequence() returns a timeline.  We can always add more animations to a timeline.
+
+Addtionally, we can add sequences to an existing timeline by calling ```sequence()``` on the timeline.  For example:
+
+```js
+var t1 = timeline()
+
+t1.sequence([ ... ])
+
+t1.play()
+```
