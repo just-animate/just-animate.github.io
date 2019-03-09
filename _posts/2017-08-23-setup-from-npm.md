@@ -33,7 +33,7 @@ By installing just-animate through NPM, you also have all the files you need to 
 
 ```js
 import { addPlugin } from 'just-animate'
-import { waapiPlugin } from 'just-animate/web'
+import { waapiPlugin } from 'just-animate/lib/web'
 
 // register the web animation api plugin
 addPlugin(waapiPlugin)
@@ -53,7 +53,7 @@ By installing just-animate through NPM, you already have the extras package.  Si
 - Include the following script in the head of your html page after the core script
 
 ```js
-import { shuffle, splitText, random } from 'just-animate/extras'
+import { shuffle, splitText, random } from 'just-animate/lib/extras'
 ```
 
 
@@ -66,7 +66,7 @@ By installing just-animate through NPM, you already have the tools package.  Sim
 
 ```js
 import { animate } from 'just-animate'
-import { player } from 'just-animate/tools'
+import { player } from 'just-animate/lib/tools'
 
 var t1 = animate({ /* */ })
 
